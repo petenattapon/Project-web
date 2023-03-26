@@ -1,0 +1,21 @@
+﻿#nav-bg{
+    height: 40vh;
+    background-image: url('https://images.unsplash.com/photo-1572328867220-8d071ba0fadb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80');
+    background-position: center;
+    background-size: cover;
+    margin: 2vh 2vw 0 2vw;
+}
+.banner-container{
+    display: flex;
+    height: 40vh;
+    align-items: center;
+    justify-content: center;
+    .banner-text{
+        color: #fff;
+        text-align: center;
+        h1{
+            box-sizing: border-box;
+            font-size: 1.5rem;
+        }
+    }
+}

@@ -1,0 +1,42 @@
+﻿h1{
+    text-align: center;
+    font-size: 2.2em;
+}
+.content-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1em;
+}
+.content-details{
+    .img-content{
+        text-align: center;
+        img{
+            width: 90%;
+            box-sizing: border-box;
+            cursor: pointer;
+        }
+    }
+    p{
+        width: 70%;
+        margin: 0 auto;
+        font-weight: bold;
+        text-align: center;
+    }
+}
+@media screen and (max-width:700px){
+    .content-container{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .content-details{
+        .img-content{
+            img{
+                width: 80%;
+                background-color: aqua;
+            }
+        }
+    }
+}
