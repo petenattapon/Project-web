@@ -8,7 +8,7 @@ function Paragraph() {
     <main id='main'>
         <article className='container'>
             <div className="paragraph-container">
-                <p>Hello</p>
+                <p>{Para}</p>
             </div>
         </article>
     </main>
