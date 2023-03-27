@@ -1,6 +1,7 @@
 ﻿import React from 'react'
 import '../sass/Page1/Header.scss'
 import { FiSearch, FiUser} from "react-icons/fi";
+import { Link } from 'react-router-dom';
 
 let logoName = 'Tage Tape.'
 
@@ -15,7 +16,7 @@ function Header() {
                 </div>
                 <div className="icon-container">
                     <FiUser className='Fi'/>
-                    <FiSearch className='Fi'/>
+                    <Link to='/gallery' id='Link'><FiSearch className='Fi'/></Link>
                 </div>
             </div>
         </div>
