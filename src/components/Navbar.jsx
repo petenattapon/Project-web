@@ -1,5 +1,6 @@
 ﻿import React from 'react'
 import '../sass/Page1/Navbar.scss'
+import { Link } from 'react-router-dom'
 
 function Navbar() {
   return (
@@ -8,11 +9,11 @@ function Navbar() {
         <header className="container">
             <div className="navbar-container">
                 <ul>
-                    <a href="#"><li>Home</li></a>
-                    <a href="#"><li>Gallery</li></a>
-                    <a href="#"><li>Events</li></a>
-                    <a href="#"><li>About</li></a>
-                    <a href="#"><li>Contact</li></a>
+                  <Link to="/" id='Link'><li>Home</li></Link>
+                  <Link to="/gallery" id='Link'><li>Gallery</li></Link> 
+                  <Link to="/event" id='Link'><li>Event</li></Link>
+                  <Link to="/about" id='Link'><li>About</li></Link>
+                  <Link to="/contact" id='Link'><li>Contact</li></Link>
                 </ul>
             </div>
         </header>
