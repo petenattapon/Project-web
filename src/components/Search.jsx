@@ -5,6 +5,7 @@ function Search() {
     <main id='Search'>
         <section className="container">
             <h1>Gallery</h1>
+            <hr style={{width:'15%'}}/>
             <div className="search-container">
               <div className="search-container-box">
                 <input type="text" placeholder='Enter'/>

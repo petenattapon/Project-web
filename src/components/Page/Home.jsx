@@ -5,6 +5,7 @@ import Banner from '../Banner'
 import Paragraph from '../Paragraph'
 import ContentTap from '../ContentTap'
 import ContentArt from '../ContentArt'
+import Footer from '../Footer'
 
 function Home() {
   return (
@@ -15,6 +16,7 @@ function Home() {
         <Paragraph />
         <ContentTap />
         <ContentArt />
+        <Footer />
     </header>
   )
 }

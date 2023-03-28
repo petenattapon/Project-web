@@ -5,7 +5,9 @@ import Navbar from '../Navbar'
 import Banner from '../Banner'
 import Paragraph from '../Paragraph'
 import Search from '../Search'
-import ContentTap from '../ContentTap'
+import AllGallery from '../AllGallery'
+import Footer from '../Footer'
+
 
 
 function Gallery() {
@@ -16,7 +18,8 @@ function Gallery() {
       <Navbar />
       <Banner />
       <Search />
-      <ContentTap />
+      <AllGallery />
+      <Footer/>
     </header>
       
   )
