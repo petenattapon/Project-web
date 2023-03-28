@@ -4,8 +4,9 @@ import Header from '../Header'
 import Navbar from '../Navbar'
 import Banner from '../Banner'
 import Paragraph from '../Paragraph'
+import Search from '../Search'
 import ContentTap from '../ContentTap'
-import ContentArt from '../ContentArt'
+
 
 function Gallery() {
   return (
@@ -14,7 +15,7 @@ function Gallery() {
       <Header />
       <Navbar />
       <Banner />
-      <Paragraph />
+      <Search />
       <ContentTap />
     </header>
       
