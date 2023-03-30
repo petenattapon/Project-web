@@ -6,6 +6,7 @@ import Gallery from './components/Page/Gallery'
 import Event from './components/Page/Event'
 import About from './components/Page/About'
 import Contact from './components/Page/Contact'
+import Profile from './components/Page/Profile'
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path='/event' element={<Event />}/>
         <Route path='/about' element={<About />}/>
         <Route path='/contact' element={<Contact />}/>
+        <Route path='/profile' element={<Profile />}></Route>
       </Routes>
     </BrowserRouter>
   )

@@ -12,10 +12,11 @@ function Header() {
         <div className="container">
             <div className="header-container">
                 <div className="logo-container">
-                    <a href=""><h1>{logoName}</h1></a>
+                    <Link to='/'><h1>{logoName}</h1></Link>
+                    
                 </div>
                 <div className="icon-container">
-                    <FiUser className='Fi'/>
+                    <Link to='/profile' id='Link'><FiUser className='Fi'/></Link>
                     <Link to='/gallery' id='Link'><FiSearch className='Fi'/></Link>
                 </div>
             </div>

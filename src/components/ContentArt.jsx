@@ -25,7 +25,7 @@ function ContentArt() {
        <div className="container">
             <section className="content-cons">
                 <div className="content-l">
-                    <img src="https://scontent.fbkk6-2.fna.fbcdn.net/v/t39.30808-6/334101625_580664690749925_8451531021388090018_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=174925&_nc_eui2=AeGoNHlDKSbe8uu3eqmLJZLfavZEAUNuhsZq9kQBQ26GxnW8cs8UTnbGB5uUJIajhP0seChCZTOcMjTBy4JD5XKs&_nc_ohc=DK6XXR3bNhcAX8GhZjD&_nc_ht=scontent.fbkk6-2.fna&oh=00_AfCinZ-79MmeMLdugy1hrcX8cw9ZsnwrXrBt7yqsc-V5DA&oe=64221894" alt=""/>
+                    <img src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/61p35almahL._UXNaN_FMjpg_QL85_.jpg" alt=""/>
                 </div>
                 <div className="content-r">
                     <h2>{t074.title}</h2>
@@ -49,7 +49,7 @@ function ContentArt() {
             </section>
             <section className="content-cons">
                 <div className="content-l">
-                    <img src="https://scontent.fbkk6-1.fna.fbcdn.net/v/t39.30808-6/336885361_658976899571433_8336861719622568724_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeFgE90gIwg_LC4l5Q7HrDiI-2UIP4D8sMb7ZQg_gPywxkuVib9LWap6yjclBOv1q2jJIi4tSTst14dgQ95RT9LA&_nc_ohc=UowxM3BUaW0AX8qbwn3&_nc_ht=scontent.fbkk6-1.fna&oh=00_AfAhFi-_RyS795sYBZRwypztkAEMr-_HrZbgTGNjGpD9AA&oe=6422B027" alt=""/>
+                    <img src="https://scontent.fphs1-1.fna.fbcdn.net/v/t39.30808-6/336885361_658976899571433_8336861719622568724_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeFgE90gIwg_LC4l5Q7HrDiI-2UIP4D8sMb7ZQg_gPywxkuVib9LWap6yjclBOv1q2jJIi4tSTst14dgQ95RT9LA&_nc_ohc=VEFlAW5sSFcAX-kiDr1&_nc_ht=scontent.fphs1-1.fna&oh=00_AfAbVr3KU34fItchegEFwP0vdoe9KN3pR_zqbSq-KBahvw&oe=642A9927" alt=""/>
                 </div>
                 <div className="content-r">
                     <h2>{whal.title}</h2>
@@ -68,7 +68,7 @@ function ContentArt() {
                     <button id='more'>More</button>
                 </div>
                 <div className="content-l">
-                    <img src="https://scontent.fbkk6-2.fna.fbcdn.net/v/t39.30808-6/330844642_935141617923214_5434973668510282814_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeEP1VVm7iGUSxfi4WtHm7jlj3876y5N11OPfzvrLk3XU0ZjkbEOKhygzT1YyEG4bOsN1xOxmoMi-AYxn3Lak6yA&_nc_ohc=6hfqoMlXGy4AX8QWyFm&_nc_ht=scontent.fbkk6-2.fna&oh=00_AfDBL4DCpBXi43TTcV8L0aiVV23Jhc-ZjI2iD-zkKUQjFA&oe=64236B63" alt=""/>
+                    <img src="https://scontent.fphs1-1.fna.fbcdn.net/v/t39.30808-6/330844642_935141617923214_5434973668510282814_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeEP1VVm7iGUSxfi4WtHm7jlj3876y5N11OPfzvrLk3XU0ZjkbEOKhygzT1YyEG4bOsN1xOxmoMi-AYxn3Lak6yA&_nc_ohc=ilrlDdId7vMAX_sgDKM&_nc_ht=scontent.fphs1-1.fna&oh=00_AfAQCjYJElzcATYiGXmK8WRg3REWDjlMKso41cmS_CS_-A&oe=64295A23" alt=""/>
                 </div>
             </section>
         </div>
