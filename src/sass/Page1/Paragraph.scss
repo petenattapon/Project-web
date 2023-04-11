@@ -24,8 +24,11 @@
     }
     
 }
-@media screen and (max-width:400px){
+@media screen and (max-width: 650px){
     main#main{
         margin-top: 5vh;
+        .paragraph-container p{
+            font-size: 3.2vw;
+        }
     }
 }

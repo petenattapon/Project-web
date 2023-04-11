@@ -23,6 +23,8 @@ function ContentArt() {
   return (
     <main id='content-art'>
        <div className="container">
+        <h1>Popular Artist</h1>
+        <hr style={{width:"30%"}}/>
             <section className="content-cons">
                 <div className="content-l">
                     <img src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/61p35almahL._UXNaN_FMjpg_QL85_.jpg" alt=""/>

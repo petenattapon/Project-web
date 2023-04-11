@@ -1,6 +1,7 @@
-﻿import React from 'react'
+﻿import React, { useState } from 'react'
 import '../sass/Page2/Gallery.scss'
 function Search() {
+
   return (
     <main id='Search'>
         <section className="container">
