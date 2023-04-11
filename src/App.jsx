@@ -11,15 +11,16 @@ import Profile from './components/Page/Profile'
 
 function App() {
   const [count, setCount] = useState(0)
+  
 
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<Home />}/>
-        <Route path='/gallery' element={<Gallery />}/>
-        <Route path='/event' element={<Event />}/>
-        <Route path='/about' element={<About />}/>
-        <Route path='/contact' element={<Contact />}/>
+        <Route path='/' element={<Home />} />
+        <Route path='/gallery' element={<Gallery />} />
+        <Route path='/event' element={<Event />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/contact' element={<Contact />} />
         <Route path='/profile' element={<Profile />}></Route>
       </Routes>
     </BrowserRouter>

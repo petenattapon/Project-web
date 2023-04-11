@@ -1,4 +1,4 @@
-﻿import React from 'react'
+﻿import React, {useEffect} from 'react'
 import Header from '../Header'
 import Navbar from '../Navbar'
 import Banner from '../Banner'
@@ -8,6 +8,11 @@ import ContentArt from '../ContentArt'
 import Footer from '../Footer'
 
 function Home() {
+
+  useEffect(() => {
+    document.title = 'TageTap | Home';
+  })
+
   return (
     <header>
         <Header />

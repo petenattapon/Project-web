@@ -1,4 +1,4 @@
-﻿import React from 'react'
+﻿import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Header from '../Header'
 import Navbar from '../Navbar'
@@ -11,17 +11,21 @@ import Footer from '../Footer'
 
 
 function Gallery() {
-  return (
 
+  useEffect(() => {
+    document.title = 'TageTap | Gallery';
+  }, [])
+
+  return (
     <header>
       <Header />
       <Navbar />
       <Banner />
       <Search />
       <AllGallery />
-      <Footer/>
+      <Footer />
     </header>
-      
+
   )
 }
 
