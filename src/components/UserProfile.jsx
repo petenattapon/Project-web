@@ -4,18 +4,9 @@ import { Link } from 'react-router-dom'
 import Modal from 'react-modal'
 
 function UserProfile() {
-    const [isModalOpen, setIsModalOpen] = useState(false);
-
-    function handleOpenModal() {
-        setIsModalOpen(true);
-    }
-
-    function handleCloseModal() {
-        setIsModalOpen(false);
-    }
     return (
         <main className="container">
-            {/* <section className="profile-container">
+            <section className="profile-container">
                 <section className="header-profile">
                     <h2 className='userName'>Hello(username)</h2>
                     <figure>
@@ -54,17 +45,7 @@ function UserProfile() {
                         <p>* Request 5 item to Amateur *</p>
                     </div>
                 </section>
-            </section> */}
-            <div>
-                <h1>Hello, World!</h1>
-                <button onClick={handleOpenModal}>Open Modal</button>
-
-                <Modal isOpen={isModalOpen} onRequestClose={handleCloseModal} contentLabel="Example Modal">
-                    <h2>Modal Title</h2>
-                    <p>Modal content goes here.</p>
-                    <button onClick={handleCloseModal}>Close Modal</button>
-                </Modal>
-            </div>
+            </section>
         </main>
     )
 }
