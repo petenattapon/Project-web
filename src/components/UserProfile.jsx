@@ -1,11 +1,21 @@
-﻿import React from 'react'
+﻿import React, {useState} from 'react'
 import '../sass/Page2/UserProfile.scss'
 import { Link } from 'react-router-dom'
+import Modal from 'react-modal'
 
 function UserProfile() {
-  return (
-    <main className="container">
-            <section className="profile-container">
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    function handleOpenModal() {
+        setIsModalOpen(true);
+    }
+
+    function handleCloseModal() {
+        setIsModalOpen(false);
+    }
+    return (
+        <main className="container">
+            {/* <section className="profile-container">
                 <section className="header-profile">
                     <h2 className='userName'>Hello(username)</h2>
                     <figure>
@@ -16,7 +26,7 @@ function UserProfile() {
                     <Link to='/'><h3>My Profile</h3></Link>
                     <Link to='/'><h3>Request item to admin</h3></Link>
                 </section>
-                <hr style={{width:'70%'}}/>
+                <hr style={{ width: '70%' }} />
                 <section className='last-profile'>
                     <article className="details-profile">
                         <h3>Name :</h3>
@@ -44,9 +54,19 @@ function UserProfile() {
                         <p>* Request 5 item to Amateur *</p>
                     </div>
                 </section>
-            </section>
-    </main>
-  )
+            </section> */}
+            <div>
+                <h1>Hello, World!</h1>
+                <button onClick={handleOpenModal}>Open Modal</button>
+
+                <Modal isOpen={isModalOpen} onRequestClose={handleCloseModal} contentLabel="Example Modal">
+                    <h2>Modal Title</h2>
+                    <p>Modal content goes here.</p>
+                    <button onClick={handleCloseModal}>Close Modal</button>
+                </Modal>
+            </div>
+        </main>
+    )
 }
 
 
