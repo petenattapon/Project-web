@@ -7,6 +7,7 @@ import Event from './components/Page/Event'
 import About from './components/Page/About'
 import Contact from './components/Page/Contact'
 import Profile from './components/Page/Profile'
+import Product from './components/Page/Product'
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route path='/about' element={<About />} />
         <Route path='/contact' element={<Contact />} />
         <Route path='/profile' element={<Profile />}></Route>
+        <Route path='/products' element={<Product />} />
       </Routes>
     </BrowserRouter>
   )

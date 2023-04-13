@@ -4,6 +4,7 @@ import '../sass/Page1/Modal.scss'
 import { FiSearch, FiUser, FiX } from "react-icons/fi";
 import { Link } from 'react-router-dom';
 import Modal from 'react-modal'
+import { AiFillCloseCircle } from "react-icons/ai";
 
 let logoName = 'Tage Tape.'
 
@@ -33,9 +34,16 @@ function Header() {
                             isOpen={modalOpen}
                             onRequestClose={handleClickCloseModal}
                             contentLabel="Example Modal"
-                            className="modal"
+                            id='Modals'
                         >
-                            <button onClick={handleClickCloseModal}><FiX /></button>
+                            <div className="close">
+                                <AiFillCloseCircle onClick={handleClickCloseModal} className='closeIcon' />
+                            </div>
+
+                            <div className="edit-modal">
+                                <h2>Welcome to Tage Tape.</h2>
+                                <hr />
+                            </div>
                         </Modal>
                         <Link to='/gallery' id='Link'>
                             <FiSearch className='Fi' />
