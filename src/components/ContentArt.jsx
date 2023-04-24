@@ -51,7 +51,7 @@ function ContentArt() {
             </section>
             <section className="content-cons">
                 <div className="content-l">
-                    <img src="https://scontent.fphs1-1.fna.fbcdn.net/v/t39.30808-6/336885361_658976899571433_8336861719622568724_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeFgE90gIwg_LC4l5Q7HrDiI-2UIP4D8sMb7ZQg_gPywxkuVib9LWap6yjclBOv1q2jJIi4tSTst14dgQ95RT9LA&_nc_ohc=VEFlAW5sSFcAX-kiDr1&_nc_ht=scontent.fphs1-1.fna&oh=00_AfAbVr3KU34fItchegEFwP0vdoe9KN3pR_zqbSq-KBahvw&oe=642A9927" alt=""/>
+                    <img src="https://www.dochord.com/wp-content/uploads/2021/04/Whal-Dolph.jpg" alt=""/>
                 </div>
                 <div className="content-r">
                     <h2>{whal.title}</h2>
@@ -70,7 +70,7 @@ function ContentArt() {
                     <button id='more'>More</button>
                 </div>
                 <div className="content-l">
-                    <img src="https://scontent.fphs1-1.fna.fbcdn.net/v/t39.30808-6/330844642_935141617923214_5434973668510282814_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeEP1VVm7iGUSxfi4WtHm7jlj3876y5N11OPfzvrLk3XU0ZjkbEOKhygzT1YyEG4bOsN1xOxmoMi-AYxn3Lak6yA&_nc_ohc=ilrlDdId7vMAX_sgDKM&_nc_ht=scontent.fphs1-1.fna&oh=00_AfAQCjYJElzcATYiGXmK8WRg3REWDjlMKso41cmS_CS_-A&oe=64295A23" alt=""/>
+                    <img src="https://joox-cms-image-1251316161.file.myqcloud.com/2022/10/26/8e4bf81d-74e1-40c4-a437-d91cf64f1ca1.jpg/640" alt=""/>
                 </div>
             </section>
         </div>

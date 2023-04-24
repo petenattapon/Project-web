@@ -1,5 +1,4 @@
 .product-container{
-    border: 1px solid red;
     width: 75%;
     margin: 0 auto;
     display: flex;
@@ -16,4 +15,9 @@
             display: inline-block;
         }
     }
+}
+.manage-center{
+    width: 90%;
+    margin: 0 auto;
+    // border: 1px solid red;
 }
