@@ -14,8 +14,8 @@ function UserProfile() {
                     </figure>
                 </section>
                 <section className='mid-profile'>
-                    <Link to='/'><h3>My Profile</h3></Link>
-                    <Link to='/'><h3>Request item to admin</h3></Link>
+                    <Link to='/profile' id='LinkPro1'><h3>My Profile</h3></Link>
+                    <Link to='/requests' id='LinkPro2'><h3>Request item to admin</h3></Link>
                 </section>
                 <hr style={{ width: '70%' }} />
                 <section className='last-profile'>

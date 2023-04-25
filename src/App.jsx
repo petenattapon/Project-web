@@ -8,6 +8,7 @@ import About from './components/Page/About'
 import Contact from './components/Page/Contact'
 import Profile from './components/Page/Profile'
 import Product from './components/Page/Product'
+import Request from './components/Page/Request'
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         <Route path='/contact' element={<Contact />} />
         <Route path='/profile' element={<Profile />}></Route>
         <Route path='/products' element={<Product />} />
+        <Route path='/requests' element={<Request />} />
       </Routes>
     </BrowserRouter>
   )
