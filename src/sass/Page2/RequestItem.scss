@@ -1,0 +1,29 @@
+.request-form {
+  height: auto;
+  .details-form {
+    height: auto;
+    width: 65%;
+    margin: 0 auto;
+    .showImg{
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    .addRe {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 1rem 0 1rem 0;
+
+      input[type="file"] {
+        height: 4vh;
+      }
+      input[type="file"]::file-selector-button {
+        background-color: #1c4a82;
+        color: #fff;
+        height: 4vh;
+        border: 0;
+        cursor: pointer;
+      }
+    }
+  }
+}

@@ -1,4 +1,4 @@
-﻿import React, {useState} from 'react'
+﻿import React, { useState } from 'react'
 import '../sass/Page2/UserProfile.scss'
 import { Link } from 'react-router-dom'
 import Modal from 'react-modal'
@@ -44,6 +44,10 @@ function UserProfile() {
                         <button>User level: Newcomer</button>
                         <p>* Request 5 item to Amateur *</p>
                     </div>
+
+                    <Link to='/requests' id='Link'>
+                        <button>Request to admin</button>
+                    </Link>
                 </section>
             </section>
         </main>

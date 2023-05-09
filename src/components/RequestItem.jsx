@@ -1,10 +1,27 @@
 import React from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import "../sass/Page2/RequestItem.scss"
 function RequestItem() {
+
+    const [images, setImages] = useState([])
+    const [imagesURL, setImagesURL] = useState([]) // is show img on website
+
+    useEffect(() => {
+        if (images.length < 1) return;
+        const newImgURL = []
+        images.forEach((image) => newImgURL.push(URL.createObjectURL(image)))
+        setImagesURL(newImgURL)
+    }, [images])
+
+    function onImageLoaded(e) {
+        setImages([...e.target.files])
+    }
+
     return (
         <main className="container">
             <section className="profile-container">
-                <section className="header-profile">
+                <section className='header-profile'>
                     <h2 className='userName'>Hello(username)</h2>
                     <figure>
                         <img src="https://i.pinimg.com/736x/8b/16/7a/8b167af653c2399dd93b952a48740620.jpg" alt="userImg" />
@@ -15,48 +32,55 @@ function RequestItem() {
                     <Link to='/requests' id='LinkPro2'><h3>Request item to admin</h3></Link>
                 </section>
                 <hr style={{ width: '70%' }} />
+                <h3>Add items</h3>
 
-                <form action="#">
-                    <div className="formLage">
-                        <label>Name</label>
-                        <input type="text" placeholder='Firstname' />
-                        <input type="text" placeholder='Lastname' />
+                <section className="request-form">
+                    <div className="details-form">
+
+                        <form action="#">
+                            <div className="addRe">
+                                <div className="showImg">{imagesURL.map((imageSrc, idx) => (
+                                    <img key={idx} width="250vh" height="250vh" src={imageSrc} />
+                                ))}</div>
+
+                                <input type="file" multiple accept="image/*" onChange={onImageLoaded} id='uploadImgs' />
+                            </div>
+                            <div className="addRe">
+                                <label htmlFor="name-product">Product name</label>
+                                <input type="text" name="name-product" id="" placeholder='Enter your name product...' />
+                            </div>
+                            <div className="addRe">
+                                <label htmlFor="name-product">Details</label>
+                                <input type="textarea" name="detail-product" id="" placeholder='Enter your name product...' />
+                            </div>
+                            <div className="addRe">
+                                <p>Music in album</p>
+                                <label htmlFor="name-product">side A</label>
+                                <input type="textarea" name="detail-product" id="" placeholder='Enter your name product...' />
+                                <label htmlFor="name-product">side B</label>
+                                <input type="textarea" name="detail-product" id="" placeholder='Enter your name product...' />
+                            </div>
+                            <div className="addRe">
+                                <label htmlFor="fileReadio">Audio (minimum 15 s.)</label>
+                                <input type="file" />
+                            </div>
+                            <div className="addRe">
+                                <select id="select-options">
+                                    <option value="">--Please choose an option--</option>
+                                    <option value="option1">Option 1</option>
+                                    <option value="option2">Option 2</option>
+                                    <option value="option3">Option 3</option>
+                                    <option value="option4">Option 4</option>
+                                    <option value="option5">Option 5</option>
+                                </select>
+                            </div>
+
+                            <button>Add(request)</button>
+                        </form>
                     </div>
-                    <div className="formSmall">
-                        <label>Gender</label>
-                        <select id="select-options">
-                            <option value="">--Please choose a Gender--</option>
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
-                            <option value="LGBTQ+">LGBTQ+</option>
-                        </select>
-                        <label>Tel</label>
-                        <input type="number" placeholder='Lastname' />
-                    </div>
-                    <div className="formLage">
-                        <label>Email</label>
-                        <input type="email" placeholder='Email' />
-                        <label>Address</label>
-                        <input type="text" placeholder='Address' />
-                    </div>
-                    <div className="formSmall">
-                        <label>Gender</label>
-                        <select id="select-options">
-                            <option value="">--Please choose a Gender--</option>
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
-                            <option value="LGBTQ+">LGBTQ+</option>
-                        </select>
-                        <label>Tel</label>
-                        <input type="number" placeholder='Lastname' />
-                    </div>
-                    <div className="formLage">
-                        <label>Password</label>
-                        <input type="password" placeholder='Password' />
-                    </div>
-                </form>
+                </section>
             </section>
-        </main>
+        </main >
     )
 }
 

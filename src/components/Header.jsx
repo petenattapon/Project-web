@@ -44,14 +44,16 @@ function Header() {
                                 <h2>Welcome to Tage Tape.</h2>
                                 <hr />
                             </div>
-                            
+
                             <form action="#" className='modal-form'>
-                                <input type="text" placeholder='Enter username'/>
-                                <input type="password" placeholder='Enter password'/>
-                                <button className='modalBtn-login'>Login</button>
+                                <input type="text" placeholder='Enter username' />
+                                <input type="password" placeholder='Enter password' />
+                                <Link to='/profile' id='Link'>
+                                    <button className='modalBtn-login'>Login</button>
+                                </Link>
                             </form>
-                            <h4 style={{textAlign:'center'}}>Or</h4>
-                            
+                            <h4 style={{ textAlign: 'center' }}>Or</h4>
+
                         </Modal>
                         <Link to='/gallery' id='Link'>
                             <FiSearch className='Fi' />
