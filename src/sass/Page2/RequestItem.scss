@@ -15,7 +15,7 @@
 .request-form {
   height: auto;
   .details-form {
-    height: auto;
+    height: 500vh;
     width: 65%;
     margin: 0 auto;
     .showImg {
@@ -27,7 +27,13 @@
       flex-direction: column;
       justify-content: center;
       padding: 1rem 0 1rem 0;
+      .set {
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 20px;
 
+<<<<<<< HEAD
       .set-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -52,6 +58,17 @@
         height: 4vh;
         cursor: pointer;
         border: 2px solid black;
+=======
+        input {
+          border: 2px solid #000;
+          box-sizing: border-box;
+          width: 100%;
+        }
+      }
+      input[type="file"] {
+        height: 4vh;
+        border: 2px solid #000;
+>>>>>>> 6ba5b12 (new)
       }
       input[type="file"]::file-selector-button {
         background-color: #1c4a82;
@@ -60,8 +77,16 @@
         border: 0;
         cursor: pointer;
       }
+      input[type="text"] {
+        height: 4vh;
+        border: 2px solid #000;
+      }
+      #select-options{
+        height: 4vh;
+      }
     }
   }
+<<<<<<< HEAD
 
   .btn-add-reque{
     margin-top: 1rem;
@@ -79,4 +104,6 @@
       background-color: #000;
     }
   }
+=======
+>>>>>>> 6ba5b12 (new)
 }
