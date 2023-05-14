@@ -40,14 +40,19 @@ function UserProfile() {
                         <p>-</p>
                     </article>
 
-                    <div className="userLevel">
+                    {/* <div className="userLevel">
                         <button>User level: Newcomer</button>
                         <p>* Request 5 item to Amateur *</p>
-                    </div>
+                    </div> */}
+                    <div className="btn-edit">
+                        <Link to="/edit">
+                            <button>Edit Profile</button>
+                        </Link>
 
-                    <Link to='/requests' id='Link'>
+                    </div>
+                    {/* <Link to='/requests' id='Link'>
                         <button>Request to admin</button>
-                    </Link>
+                    </Link> */}
                 </section>
             </section>
         </main>

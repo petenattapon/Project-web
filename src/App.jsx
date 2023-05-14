@@ -9,6 +9,7 @@ import Contact from './components/Page/Contact'
 import Profile from './components/Page/Profile'
 import Product from './components/Page/Product'
 import Request from './components/Page/Request'
+import EditProfile from './components/Page/EditProfile'
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
         <Route path='/profile' element={<Profile />}></Route>
         <Route path='/products' element={<Product />} />
         <Route path='/requests' element={<Request />} />
+        <Route path='/edit' element={<EditProfile />} />
       </Routes>
     </BrowserRouter>
   )

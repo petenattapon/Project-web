@@ -1,12 +1,26 @@
+.mid-re {
+  box-sizing: border-box;
+  width: 100%;
+  padding-left: 10rem;
+  #LinkPro1 {
+    color: #b9b9b9;
+    text-decoration: none;
+  }
+  #LinkPro2 {
+    text-decoration: none;
+    color: #000;
+  }
+}
+
 .request-form {
   height: auto;
   .details-form {
     height: auto;
     width: 65%;
     margin: 0 auto;
-    .showImg{
-        text-align: center;
-        margin-bottom: 1rem;
+    .showImg {
+      text-align: center;
+      margin-bottom: 1rem;
     }
     .addRe {
       display: flex;
@@ -14,8 +28,30 @@
       justify-content: center;
       padding: 1rem 0 1rem 0;
 
+      .set-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 10px;
+        .set-input {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+      label {
+        font-weight: bold;
+      }
+      select {
+        height: 5vh;
+        border: 3px solid black;
+      }
+      input[type="text"] {
+        border: 3px solid black;
+        height: 4vh;
+      }
       input[type="file"] {
         height: 4vh;
+        cursor: pointer;
+        border: 2px solid black;
       }
       input[type="file"]::file-selector-button {
         background-color: #1c4a82;
@@ -24,6 +60,23 @@
         border: 0;
         cursor: pointer;
       }
+    }
+  }
+
+  .btn-add-reque{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    button{
+      padding: .5rem .5rem;
+      cursor: pointer;
+      border: 3px solid #000;
+      background-color: #fff;
+      transition: .5s ease;
+    }
+    button:hover{
+      color: #fff;
+      background-color: #000;
     }
   }
 }
