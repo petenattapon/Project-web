@@ -16,7 +16,7 @@ function RequestItem() {
           </figure>
         </section>
         <section className="mid-re">
-          <Link to="/profile" id="LinkPro1" >
+          <Link to="/profile" id="LinkPro1">
             <h3>My Profile</h3>
           </Link>
           <Link to="/requests" id="LinkPro2">
@@ -43,32 +43,17 @@ function RequestItem() {
               </div>
               <div className="addRe">
                 <label htmlFor="name-product">Details</label>
-                <input
-                  type="text"
-                  name="detail-product"
-                  id=""
-                  placeholder="Enter your name product..."
-                />
+                <textarea rows="8" cols="50" name="comment" form="usrform"></textarea>
               </div>
               <div className="addRe">
                 <div className="set-grid">
                   <div className="set-input">
                     <label htmlFor="name-product">side A</label>
-                    <input
-                      type="text"
-                      name="detail-product"
-                      id=""
-                      placeholder="Enter your name product..."
-                    />
+                    <textarea rows="8" cols="25" name="comment" form="usrform"></textarea>
                   </div>
                   <div className="set-input">
                     <label htmlFor="name-product">side B</label>
-                    <input
-                      type="text"
-                      name="detail-product"
-                      id=""
-                      placeholder="Enter your name product..."
-                    />
+                    <textarea rows="8" cols="25" name="comment" form="usrform"></textarea>
                   </div>
                 </div>
                 <p>Music in album</p>

@@ -27,7 +27,11 @@
       flex-direction: column;
       justify-content: center;
       padding: 1rem 0 1rem 0;
-
+      textarea {
+        border: 3px solid #000;
+        resize: none;
+        outline: none;
+      }
       .set-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -35,6 +39,11 @@
         .set-input {
           display: flex;
           flex-direction: column;
+          textarea {
+            border: 3px solid #000;
+            resize: none;
+            outline: none;
+          }
         }
       }
       label {
@@ -63,18 +72,18 @@
     }
   }
 
-  .btn-add-reque{
+  .btn-add-reque {
     margin-top: 1rem;
     display: flex;
     justify-content: center;
-    button{
-      padding: .5rem .5rem;
+    button {
+      padding: 0.5rem 0.5rem;
       cursor: pointer;
       border: 3px solid #000;
       background-color: #fff;
-      transition: .5s ease;
+      transition: 0.5s ease;
     }
-    button:hover{
+    button:hover {
       color: #fff;
       background-color: #000;
     }
