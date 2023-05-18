@@ -10,6 +10,8 @@ import Profile from './components/Page/Profile'
 import Product from './components/Page/Product'
 import Request from './components/Page/Request'
 import EditProfile from './components/Page/EditProfile'
+import AdminPage from './components/Page/AdminPage'
+import EditPage from './components/Page/EditPage'
 
 
 function App() {
@@ -28,6 +30,8 @@ function App() {
         <Route path='/products' element={<Product />} />
         <Route path='/requests' element={<Request />} />
         <Route path='/edit' element={<EditProfile />} />
+        <Route path='/admin' element={<AdminPage />} />
+        <Route path='/editpage' element={<EditPage />} />
       </Routes>
     </BrowserRouter>
   )

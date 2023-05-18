@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../sass/Page2/RequestItem.scss";
+import axios from 'axios';
 
 function RequestItem() {
   const [productName, setProductName] = useState("");
@@ -11,13 +12,24 @@ function RequestItem() {
 
   const onSubmit = (e) => {
     e.preventDefault();
+    const tapeObj = {
+      productName: productName,
+      productDetail: productDetail,
+      sideA: sideA,
+      sideB: sideB,
+      opProduct: opProduct,
+    }
+
+    axios.post('http://localhost:8552/tapes/requests', tapeObj)
+      .then(res => console.log(res.data))
+      .catch(err => console.log(err));
 
     console.log("Submit Success......");
-    console.log("Name product :", productName);
-    console.log("Details :", productDetail);
-    console.log("Side a :", sideA);
-    console.log("Side b :", sideB);
-    console.log("option :", opProduct);
+    console.log("Name product:", productName);
+    console.log("Details:", productDetail);
+    console.log("Side A:", sideA);
+    console.log("Side B:", sideB);
+    console.log("Option:", opProduct);
 
     setProductName("");
     setProductDetail("");
@@ -30,7 +42,7 @@ function RequestItem() {
     <main className="container">
       <section className="profile-container">
         <section className="header-profile">
-          <h2 className="userName">Hello(username)</h2>
+          {/* <h2 className="userName">Hello(username)</h2> */}
           <figure>
             <img
               src="https://i.pinimg.com/736x/8b/16/7a/8b167af653c2399dd93b952a48740620.jpg"
@@ -111,11 +123,11 @@ function RequestItem() {
                   onChange={(e) => setOpProduct(e.target.value)}
                 >
                   <option value="">--Please choose an option--</option>
-                  <option value="option1">Option 1</option>
-                  <option value="option2">Option 2</option>
-                  <option value="option3">Option 3</option>
-                  <option value="option4">Option 4</option>
-                  <option value="option5">Option 5</option>
+                  <option value="option1" key="option1">Option 1</option>
+                  <option value="option2" key="option2">Option 2</option>
+                  <option value="option3" key="option3">Option 3</option>
+                  <option value="option4" key="option4">Option 4</option>
+                  <option value="option5" key="option5">Option 5</option>
                 </select>
               </div>
               <div className="btn-add-reque">
