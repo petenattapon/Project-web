@@ -7,7 +7,7 @@ let productSchema = new Schema(
     details: { type: String },
     sideA: { type: String },
     sideB: { type: String },
-    options: { type: String },
+    options: { type: String }
   },
   { collection: "tape" }
 );

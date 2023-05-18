@@ -6,7 +6,7 @@ let mongoose = require('mongoose')
 let productSchema = require('../models/TapeRequest')
 
 // Create a new product
-router.route('/requests').post((req, res, next) => {
+router.post('/requests',(req, res, next) => {
     productSchema.create(req.body, (error, data) => {
         if (error) {
             return next(error);

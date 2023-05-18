@@ -1,0 +1,30 @@
+﻿header#main{
+    background-color: #D7D7D7;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}  
+.header-container{
+
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .logo-container{
+        a{
+            text-decoration: none;
+            color: #000;
+            font-size: .8em;
+        }
+    }
+    .icon-container{
+         .Fi{
+            padding: 0 .3em;
+            font-size: 20px;
+        }
+        #Link{
+            color: #000;
+        }
+    }
+}

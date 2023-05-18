@@ -1,0 +1,105 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Sono&display=swap');
+.search-container{
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .search-container-box{
+        width: 80%;
+        text-align: center;
+        margin: 1.5rem 0;
+        input{
+            width: 70%;
+            height: 4vh;
+            font-size: 1.1em !important;
+            border: 3px solid #000;
+            outline: none;
+            margin-right: 2em;
+        }
+        button#search{
+            height: 4.5vh;
+            padding: 0 1.5rem;
+            background-color: #fff;
+            color: #000;
+            font-size: 1rem;
+            border: 3px solid #000;
+            cursor: pointer;
+            transition: all 1s ease;
+        }
+        button#search-type{
+            height: 4.5vh;
+            padding: 0 2rem;
+            background-color: #fff;
+            color: #000;
+            font-size: 1rem;
+            border: 3px solid #000;
+            margin: 0 3rem;
+            cursor: pointer;
+            transition:  1s ease;
+        }
+        #search:hover, #search-type:hover{
+            background-color: #000;
+            color: #fff;
+        }
+        #select-options{
+            height: 5vh;
+            width: 90%;
+            background-color: #fff;
+            color: #000;
+            font-size: 1rem;
+            font-weight: bold;
+            border: 3px solid #000;
+            cursor: pointer;
+        }
+    }
+
+}
+@media screen and (max-width: 800px) {
+    .search-container{
+        .search-container-box{
+            button#search{
+                padding: 0 1rem;
+                background-color: aqua;
+            }
+            button#search-type{
+                margin: 0 1rem;
+                padding: 0 1.2rem;
+            }
+        }
+    }  
+}
+
+@media screen and (max-width: 600px) {
+    .search-container{
+        .search-container-box{
+            button#search{
+                padding: 0 .5rem;
+            }
+        }
+    }  
+}
+@media screen and (max-width: 590px) {
+    .search-container{
+        .search-container-box{            
+            button#search-type{
+                margin: 0 1rem;
+                padding: 0 .8rem;
+            }
+        }
+    }  
+}
+@media screen and (max-width: 390px) {
+    .search-container{
+        .search-container-box{
+            button#search{
+                padding: 0 0;
+                background-color: aqua;
+            }
+            button#search-type{
+                margin: 0 1rem;
+                padding: 0 .3rem;
+            }
+        }
+    }  
+}
