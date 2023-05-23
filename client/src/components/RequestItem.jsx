@@ -20,7 +20,7 @@ function RequestItem() {
       opProduct: opProduct,
     }
 
-    await axios.post('http://localhost:8552/tapes/requests', tapeObj)
+    await axios.post('http://localhost:4000/requests/tapes', tapeObj)
       .then(res => console.log(res.data))
       .catch(err => console.log(err));
 
