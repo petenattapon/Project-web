@@ -1,61 +1,26 @@
-let express = require("express");
-let mongoose = require("mongoose");
-let cors = require("cors");
-let bodyParser = require("body-parser");
-let dbConfig = require("./database/db");
-let path = require("path");
+const cors = require("cors");
+const express = require("express");
+const TapeRouter = require("./routes/tape.route");
+const MongoConnection = require("./database/db");
 
-// Express Route
-const tttt = require("../server/routes/tape.route");
+const PORT = 4000;
 
-// Connecting MongDB Database
-mongoose.Promise = global.Promise;
-mongoose
-  .connect(dbConfig.db, {
-    useNewUrlParser: true,
-    // useUnifiedTopology: true
-  })
-  .then(
-    () => {
-      console.log("Database successfully connected");
-    },
-    (error) => {
-      console.log("Could not connect to database: " + error);
-    }
-  );
+async function main() {
+  try {
+    const app = express();
+    await MongoConnection();
 
-const app = express();
-app.use(express.json());
-// app.use(
-//   bodyParser.urlencoded({
-//     extended: true,
-//   })
-// );
-app.use(cors());
-app.use("/tapes", tttt);
+    app.use(express.json());
+    app.use(cors());
 
-// if (process.env.NODE_ENV === 'production') {
-//     app.use(express.static(path.join(__dirname, '../build')))
+    app.use(TapeRouter);
 
-//     app.get("*", (req, res) => {
-//         res.sendFile(path.join(__dirname, "../build/index.html"))
-//     })
-// }
+    app.listen(PORT, () => {
+      console.log("Server started on port 4000");
+    });
+  } catch (error) {
+    console.log(error);
+  }
+}
 
-// PORT
-const port = process.env.PORT || 8552;
-const server = app.listen(port, () => {
-  console.log("Connected to port " + port);
-});
-
-// 404 Error
-app.use((req, res, next) => {
-  next(createError(404));
-});
-
-// Error handler
-app.use(function (err, req, res, next) {
-  console.error(err.message);
-  if (!err.statusCode) err.statusCode = 500;
-  res.status(err.statusCode).send(err.message);
-});
+main();

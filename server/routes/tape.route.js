@@ -1,21 +1,22 @@
-let mongoose = require('mongoose')
-    express = require('express')
-    router = express.Router()
+const express = require("express");
+const router = express.Router();
 
-// Tape model
-let productSchema = require('../models/TapeRequest')
+const TapeModel = require("../models/TapeRequest");
 
-// Create a new product
-router.post('/requests',(req, res, next) => {
-    productSchema.create(req.body, (error, data) => {
-        if (error) {
-            return next(error);
-            console.log("Error creating product")
-        } else {
-            console.log(data)
-            res.json(data)
-        }
-    })
-})
+router.post("/requests/tapes", async (req, res, next) => {
+  const { productName, productDetail, sideA, sideB, opProduct } = req.body;
+
+  const tape = new TapeModel({
+    productName,
+    productDetail,
+    sideA,
+    sideB,
+    opProduct
+  });
+
+  await tape.save();
+
+  res.json({ message: "Tape created successfully" });
+});
 
 module.exports = router;
