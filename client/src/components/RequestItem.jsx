@@ -123,11 +123,9 @@ function RequestItem() {
                   onChange={(e) => setOpProduct(e.target.value)}
                 >
                   <option value="">--Please choose an option--</option>
-                  <option value="option1" key="option1">Option 1</option>
-                  <option value="option2" key="option2">Option 2</option>
-                  <option value="option3" key="option3">Option 3</option>
-                  <option value="option4" key="option4">Option 4</option>
-                  <option value="option5" key="option5">Option 5</option>
+                  <option value="rare" key="rare">Rare</option>
+                  <option value="popular" key="popular">Poppular</option>
+                  <option value="new" key="new">New</option>
                 </select>
               </div>
               <div className="btn-add-reque">
