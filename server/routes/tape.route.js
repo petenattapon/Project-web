@@ -20,7 +20,7 @@ router.post("/requests/tapes", async (req, res, next) => {
   res.json({ message: "Tape created successfully" });
 });
 
-// Read all product
+
 router.get("/requests/tapes", async (req, res, next) => {
   try {
     const tape = await TapeModel.find();
@@ -30,29 +30,23 @@ router.get("/requests/tapes", async (req, res, next) => {
   }
 });
 
-// Read only id of product
-
-router.get("/requests/tapes/:id", async (req, res, next) => {
+// Get Data for show disply
+router.get("/requests/get_tapes", async (req, res, next) => {
   try {
-    const tapeId = req.params.id;
-    const tape = await TapeModel.findById(tapeId);
-    
-    if (!tape) {
-      return res.status(404).json({ message: "Tape not found" });
-    }
-    
+    const tape = await TapeModel.find();
     res.json(tape);
   } catch (error) {
     next(error);
   }
-});
+})
+
 
 // Delete Product by id
 router.delete("/requests/tapes/:id", async (req, res, next) => {
   try {
     const tapeId = req.params.id;
     const tape = await TapeModel.findByIdAndDelete(tapeId);
-    res.json(tape);
+    res.json({ message: "Tape created successfully" });
   } catch (error) {
     next(error);
   }
