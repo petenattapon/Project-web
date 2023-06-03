@@ -42,7 +42,7 @@ router.get("/requests/get_tapes", async (req, res, next) => {
 
 
 // Delete Product by id
-router.delete("/requests/tapes/:id", async (req, res, next) => {
+router.delete("/requests/delete_tape/:id", async (req, res, next) => {
   try {
     const tapeId = req.params.id;
     const tape = await TapeModel.findByIdAndDelete(tapeId);
