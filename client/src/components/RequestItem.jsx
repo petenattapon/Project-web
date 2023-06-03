@@ -124,7 +124,7 @@ function RequestItem() {
                 >
                   <option value="">--Please choose an option--</option>
                   <option value="rare" key="rare">Rare</option>
-                  <option value="popular" key="popular">Poppular</option>
+                  <option value="popular" key="popular">Popular</option>
                   <option value="new" key="new">New</option>
                 </select>
               </div>

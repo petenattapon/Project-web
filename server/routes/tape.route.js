@@ -40,6 +40,16 @@ router.get("/requests/get_tapes", async (req, res, next) => {
   }
 })
 
+// Get a specific tape product by ID
+router.get("/requests/get_tapes/:id", async (req, res, next) => {
+  try {
+    const tapeId = req.params.id;
+    const tape = await TapeModel.findById(tapeId);
+    res.json(tape);
+  } catch (error) {
+    next(error);
+  }
+});
 
 // Delete Product by id
 router.delete("/requests/delete_tape/:id", async (req, res, next) => {
