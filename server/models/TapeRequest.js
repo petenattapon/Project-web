@@ -6,6 +6,7 @@ const productSchema = new mongoose.Schema({
   sideA: { type: String },
   sideB: { type: String },
   opProduct: { type: String },
+  approved: { type: Boolean, default: false }
 }, {
   collection: "TapesCass"
 });

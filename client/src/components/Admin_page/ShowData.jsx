@@ -8,11 +8,17 @@ function ShowData() {
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get('http://localhost:4000/requests/get_tapes');
-      setProductTapes(response.data);
-      console.log("Product :", response.data);
+      const sortedData = response.data.sort((a, b) =>
+        a.productName.localeCompare(b.productName)
+      )
+      setProductTapes(sortedData);
+      console.log("Product :", sortedData);
     };
     fetchData();
   }, []);
+
+
+
 
   const handleDelete = async (id) => {
   const alertCon = window.confirm("Are you sure you want to delete it?....")
