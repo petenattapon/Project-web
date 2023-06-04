@@ -4,7 +4,7 @@ import Header from '../Header'
 import Navbar from '../Navbar'
 import Banner from '../Banner'
 import Paragraph from '../Paragraph'
-import Search from '../Search'
+// import Search from '../Search'
 import AllGallery from '../AllGallery'
 import Footer from '../Footer'
 
@@ -21,7 +21,7 @@ function Gallery() {
       <Header />
       <Navbar />
       <Banner />
-      <Search />
+      {/* <Search /> */}
       <AllGallery />
       <Footer />
     </header>
