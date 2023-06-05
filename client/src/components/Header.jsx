@@ -8,7 +8,7 @@ import { AiFillCloseCircle } from "react-icons/ai";
 
 let logoName = 'Tage Tape.'
 
-function Header() {
+function Header({setLogin}) {
     const [modalOpen, setModalOpen] = useState(false)
 
     function handleClickOpenModal() {
@@ -30,6 +30,7 @@ function Header() {
                         <Link id='Link' onClick={handleClickOpenModal}>
                             <FiUser className='Fi' />
                         </Link>
+                        <button onClick={() => setLogin({})}>Logout</button>
                         <Modal
                             isOpen={modalOpen}
                             onRequestClose={handleClickCloseModal}

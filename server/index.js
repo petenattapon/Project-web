@@ -1,6 +1,7 @@
 const cors = require("cors");
 const express = require("express");
 const TapeRouter = require("./routes/tape.route");
+const UserData = require('./routes/regis.route')
 const MongoConnection = require("./database/db");
 
 const PORT = 4000;
@@ -14,6 +15,7 @@ async function main() {
     app.use(cors());
 
     app.use(TapeRouter);
+    app.use(UserData)
 
     app.listen(PORT, () => {
       console.log("Server started on port 4000");

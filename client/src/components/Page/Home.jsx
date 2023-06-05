@@ -7,7 +7,7 @@ import ContentTap from '../ContentTap'
 import ContentArt from '../ContentArt'
 import Footer from '../Footer'
 
-function Home() {
+function Home({setLogin}) {
 
   useEffect(() => {
     document.title = 'TageTap | Home';
@@ -15,8 +15,8 @@ function Home() {
 
   return (
     <header>
-        <Header />
-        <Navbar />
+        <Header setLogin={setLogin} />
+        <Navbar   />
         <Banner />
         <Paragraph />
         <ContentTap />
