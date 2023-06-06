@@ -56,9 +56,10 @@ function TapeProduct() {
                   <button>Request to admin</button>
                 </Link>
               </figure>
+              <hr />
               <figure>
-                <Link to="/profile" id="Link">
-                  <button>Request to admin</button>
+                <Link to="/gallery">
+                  <button className='back'>Go back</button>
                 </Link>
               </figure>
             </div>

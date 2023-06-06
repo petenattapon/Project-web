@@ -2,13 +2,12 @@
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 
-
 function Login({ setLogin }) {
   const navigate = useNavigate();
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  
+
   const onSubmit = async (e) => {
     e.preventDefault();
 
@@ -21,15 +20,16 @@ function Login({ setLogin }) {
       const response = await axios.post('http://localhost:4000/login/user', user);
       console.log(response.data);
       setLogin(response.data.user);
-      navigate('/');
+
+      if (response.data.user.status === 'admin') {
+        navigate('/admin/productSchema');
+      } else {
+        navigate('/');
+      }
     } catch (error) {
       console.log(error);
       alert('Invalid email or password');
     }
-
-    console.log('Submit Success......');
-    console.log(email);
-    console.log(password);
 
     setEmail('');
     setPassword('');
@@ -45,11 +45,11 @@ function Login({ setLogin }) {
   };
 
   return (
-    <div className='container_form'>
+    <div className="container_form">
       <div className="form-box">
         <header>
-          <h1 className='title_login'>Login </h1>
-          <p className='mid_login'>Welcome to TageTape, Yah!!</p>
+          <h1 className="title_login">Login</h1>
+          <p className="mid_login">Welcome to TageTape, Yah!!</p>
         </header>
         <div className="s" style={{ margin: '0 auto', textAlign: 'center' }}>
           <form onSubmit={onSubmit}>
@@ -69,10 +69,12 @@ function Login({ setLogin }) {
               onChange={handleChange}
             />
             <br />
-            <button type="submit" className='login'>Login</button>
+            <button type="submit" className="login">
+              Login
+            </button>
             <p>or</p>
             <Link to="/register">
-              <button className='regis'>Register</button>
+              <button className="regis">Register</button>
             </Link>
           </form>
         </div>

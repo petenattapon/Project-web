@@ -14,13 +14,15 @@ import AdminPage from './components/Page/AdminPage';
 import EditPage from './components/Page/EditPage';
 import Register from './components/Login_Regis/Register';
 import Login from './components/Login_Regis/Login';
-import ShowData from './components/Admin_page/ShowData';
 import ShowUserData from './components/Admin_page/ShowUserData';
+import AddItems from './components/Admin_page/AddItems';
+
+
 function App() {
   const [user, setLogin] = useState(null);
 
   useEffect(() => {
-    const storedUser = JSON.parse(localStorage.getItem('5'));
+    const storedUser = JSON.parse(localStorage.getItem('1'));
     if (storedUser && storedUser._id) {
       setLogin(storedUser);
     }
@@ -28,12 +30,12 @@ function App() {
 
   const handleLogin = (userData) => {
     setLogin(userData);
-    localStorage.setItem('5', JSON.stringify(userData));
+    localStorage.setItem('1', JSON.stringify(userData));
   };
 
   const handleLogout = () => {
     setLogin(null);
-    localStorage.removeItem('5');
+    localStorage.removeItem('1');
   };
 
   return (
@@ -52,9 +54,9 @@ function App() {
         <Route path="/requests" element={<Request />} />
         <Route path="/edit" element={<EditProfile />} />
         <Route path="/admin/productSchema" element={<AdminPage />} />
-        <Route path="/editpage" element={<EditPage />} />
         <Route path="/register" element={<Register />} />
         <Route path='/userSchema' element={<ShowUserData />} />
+        <Route path='/addItems' element={<AddItems />} />
         <Route path="/login" element={<Login setLogin={handleLogin} />} />
 
       </Routes>

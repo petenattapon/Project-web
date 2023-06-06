@@ -28,6 +28,7 @@ router.post("/requests/tapes", upload, async (req, res, next) => {
     sideB,
     opProduct,
     image: req.file.filename, // Use req.file.filename to store the image filename
+    createdAt: Date.now()
   });
 
   await tape.save();
@@ -71,6 +72,24 @@ router.delete("/requests/delete_tape/:id", async (req, res, next) => {
     const tapeId = req.params.id;
     const tape = await TapeModel.findByIdAndDelete(tapeId);
     res.json({ message: "Tape deleted successfully" });
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.put('/update/tapes/:id', async (req, res, next) => {
+  try {
+    const tapeId = req.params.id;
+    const updateData = {
+      productName: req.body.productName,
+      productDetail: req.body.productDetail,
+      sideA: req.body.sideA,
+      sideB: req.body.sideB,
+      opProduct: req.body.opProduct,
+      image: req.file.filename,
+    };
+    const tape = await TapeModel.findByIdAndUpdate(tapeId, updateData);
+    res.json({ message: 'Tape updated successfully' });
   } catch (error) {
     next(error);
   }

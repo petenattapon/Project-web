@@ -85,6 +85,7 @@ function ShowData() {
               <th>Type</th>
               <th>Time</th>
               <th>Approved</th>
+              <th>edit</th>
               <th>Delete</th>
             </tr>
           </thead>
@@ -92,19 +93,22 @@ function ShowData() {
             {filteredProductTapes.map((product) => (
               <tr key={product._id}>
                 <td>
-                <img src={`http://localhost:4000/uploads/${product.image}`} alt="Product" style={{height:"5vw"}}/>
-
-
+                  <img src={`http://localhost:4000/uploads/${product.image}`} alt="Product" style={{height:"5vw"}}/>
                 </td>
                 <td>{product.productName}</td>
                 <td>{product.productDetail}</td>
                 <td>{product.sideA}</td>
                 <td>{product.sideB}</td>
                 <td>{product.opProduct}</td>
-                <td>{moment(product.createdAt).format('YYYY-MM-DD HH:mm:ss')}</td> {/* Use moment to format the time */}
+                <td>{moment(product.createdAt).format('YYYY-MM-DD HH:mm:ss.SSS')}</td> {/* Include milliseconds in the timestamp */}
                 <td>
-                  <button className="approved" onClick={() => handleDelete(product._id)}>
+                  <button className="approved">
                     Approved
+                  </button>
+                </td>
+                <td>
+                  <button className="edit">
+                    Edit
                   </button>
                 </td>
                 <td>
