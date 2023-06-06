@@ -77,6 +77,7 @@ function ShowData() {
         <table className="content-table">
           <thead>
             <tr>
+              <th>Image</th>
               <th>Product name</th>
               <th>Product details</th>
               <th>Music A</th>
@@ -90,6 +91,11 @@ function ShowData() {
           <tbody>
             {filteredProductTapes.map((product) => (
               <tr key={product._id}>
+                <td>
+                <img src={`http://localhost:4000/uploads/${product.image}`} alt="Product" style={{height:"5vw"}}/>
+
+
+                </td>
                 <td>{product.productName}</td>
                 <td>{product.productDetail}</td>
                 <td>{product.sideA}</td>

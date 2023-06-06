@@ -9,33 +9,36 @@ function RequestItem() {
   const [sideA, setSideA] = useState("");
   const [sideB, setSideB] = useState("");
   const [opProduct, setOpProduct] = useState("");
+  const [image, setImage] = useState(null);
 
-  const onSubmit = async(e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
-    const tapeObj = {
-      productName: productName,
-      productDetail: productDetail,
-      sideA: sideA,
-      sideB: sideB,
-      opProduct: opProduct,
+
+    const formData = new FormData();
+    formData.append("image", image);
+    formData.append("productName", productName);
+    formData.append("productDetail", productDetail);
+    formData.append("sideA", sideA);
+    formData.append("sideB", sideB);
+    formData.append("opProduct", opProduct);
+
+    try {
+      await axios.post('http://localhost:4000/requests/tapes', formData);
+      console.log("Tape created successfully");
+      setProductName("");
+      setProductDetail("");
+      setSideA("");
+      setSideB("");
+      setOpProduct("");
+      setImage(null);
+    } catch (error) {
+      console.log(error);
     }
 
-    await axios.post('http://localhost:4000/requests/tapes', tapeObj)
-      .then(res => console.log(res.data))
-      .catch(err => console.log(err));
+  };
 
-    console.log("Submit Success......");
-    console.log("Name product:", productName);
-    console.log("Details:", productDetail);
-    console.log("Side A:", sideA);
-    console.log("Side B:", sideB);
-    console.log("Option:", opProduct);
-
-    setProductName("");
-    setProductDetail("");
-    setSideA("");
-    setSideB("");
-    setOpProduct("");
+  const handleImageChange = (e) => {
+    setImage(e.target.files[0]);
   };
 
   return (
@@ -63,7 +66,16 @@ function RequestItem() {
 
         <section className="request-form">
           <div className="details-form">
-            <form onSubmit={onSubmit}>
+            <form onSubmit={onSubmit} encType="multipart/form-data">
+            <div className="addRe">
+                <label htmlFor="image">Product Image</label>
+                <input
+                  type="file"
+                  id="image"
+                  name="image"
+                  onChange={handleImageChange}
+                />
+              </div>
               <div className="addRe">
                 <label htmlFor="name-product">Product name</label>
                 <input

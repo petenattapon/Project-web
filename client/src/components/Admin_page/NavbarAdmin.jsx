@@ -21,7 +21,7 @@ function NavbarAdmin() {
             <div className="container">
                 <div className="header-container-admin">
                     <div className="logo-container">
-                        <Link to='/admin/productSchema'><h2>Admin page</h2></Link>
+                        <Link to='/admin/productSchema' className='aaa'><h2>Admin page</h2></Link>
                     </div>
                     <div className="page-admin">
                         <Link to='/admin/productSchema' className='lAd'>Product</Link>

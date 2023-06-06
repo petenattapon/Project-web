@@ -83,7 +83,7 @@ function AllGallery() {
               <Link to={`/products/${product._id}`}>
                 <figure className='img-gallery'>
                   <a href={`/products/${product._id}`}>
-                    <img src="https://happeningandfriends.com/uploads/happening/products/41/004027/thumbnail/thingtape-mock.jpg" alt="" />
+                  <img src={`http://localhost:4000/uploads/${product.image}`} alt="Product"/>
                   </a>
                 </figure>
               </Link>

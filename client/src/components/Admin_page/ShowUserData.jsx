@@ -33,12 +33,13 @@ function ShowUserData() {
         sortedData.sort((a, b) => a.firstname.localeCompare(b.firstname));
       }
 
-      setUserData(sortedData);
-      console.log('Sorted User Data:', sortedData);
+      return sortedData;
     };
 
-    sortData();
-  }, [sortingOption, userData]);
+    const sortedData = sortData();
+    setUserData(sortedData);
+    console.log('Sorted User Data:', sortedData);
+  }, [sortingOption]);
 
   const handleDelete = async (id) => {
     const alertCon = window.confirm('Are you sure you want to delete it?....');

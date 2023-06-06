@@ -1,11 +1,25 @@
 const express = require("express");
 const router = express.Router();
-
 const TapeModel = require("../models/TapeRequest");
+const multer = require('multer');
+
+// Images
+let storage = multer.diskStorage({
+  destination: function(req, file, cb) {
+    cb(null, './uploads');
+  },
+  filename: function(req, file, cb) {
+    cb(null, file.fieldname + "_" + Date.now() + "_" + file.originalname);
+  }
+});
+
+let upload = multer({
+  storage: storage,
+}).single('image');
 
 // Create a product
-router.post("/requests/tapes", async (req, res, next) => {
-  const { productName, productDetail, sideA, sideB, opProduct,createdAt } = req.body;
+router.post("/requests/tapes", upload, async (req, res, next) => {
+  const { productName, productDetail, sideA, sideB, opProduct, image } = req.body;
 
   const tape = new TapeModel({
     productName,
@@ -13,14 +27,13 @@ router.post("/requests/tapes", async (req, res, next) => {
     sideA,
     sideB,
     opProduct,
-    createdAt: new Date()
+    image: req.file.filename, // Use req.file.filename to store the image filename
   });
 
   await tape.save();
 
   res.json({ message: "Tape created successfully" });
 });
-
 
 router.get("/requests/tapes", async (req, res, next) => {
   try {
@@ -31,7 +44,7 @@ router.get("/requests/tapes", async (req, res, next) => {
   }
 });
 
-// Get Data for show disply
+// Get Data for show display
 router.get("/requests/get_tapes", async (req, res, next) => {
   try {
     const tape = await TapeModel.find();
@@ -39,7 +52,7 @@ router.get("/requests/get_tapes", async (req, res, next) => {
   } catch (error) {
     next(error);
   }
-})
+});
 
 // Get a specific tape product by ID
 router.get("/requests/get_tapes/:id", async (req, res, next) => {
@@ -52,12 +65,12 @@ router.get("/requests/get_tapes/:id", async (req, res, next) => {
   }
 });
 
-// Delete Product by id
+// Delete Product by ID
 router.delete("/requests/delete_tape/:id", async (req, res, next) => {
   try {
     const tapeId = req.params.id;
     const tape = await TapeModel.findByIdAndDelete(tapeId);
-    res.json({ message: "Tape created successfully" });
+    res.json({ message: "Tape deleted successfully" });
   } catch (error) {
     next(error);
   }

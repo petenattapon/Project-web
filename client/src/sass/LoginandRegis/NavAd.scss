@@ -6,6 +6,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    .logo-container .aaa{
+        text-decoration: none;
+        color: #000;
+    }
     .page-admin .lAd{
         box-sizing: border-box;
         margin: 10px 0;

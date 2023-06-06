@@ -35,7 +35,7 @@ function TapeProduct() {
                 <h2>{product.productName}</h2>
               </div>
               <figure className="image-product">
-                <img src="https://happeningandfriends.com/uploads/happening/products/41/004027/thumbnail/thingtape-mock.jpg" alt="" />
+                <img src={`http://localhost:4000/uploads/${product.image}`} alt="Product"/>
               </figure>
               <div className="play-music">
                 <AiFillPlayCircle /> <p>ฟังเพลงตัวอย่าง</p>
