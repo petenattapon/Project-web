@@ -2,12 +2,13 @@
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 
+
 function Login({ setLogin }) {
   const navigate = useNavigate();
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
+  
   const onSubmit = async (e) => {
     e.preventDefault();
 
@@ -23,6 +24,7 @@ function Login({ setLogin }) {
       navigate('/');
     } catch (error) {
       console.log(error);
+      alert('Invalid email or password');
     }
 
     console.log('Submit Success......');
@@ -43,32 +45,37 @@ function Login({ setLogin }) {
   };
 
   return (
-    <div>
-      <h1>Login</h1>
-      <div className="s" style={{ margin: '0 auto', textAlign: 'center' }}>
-        <form onSubmit={onSubmit}>
-          <input
-            type="email"
-            name="email"
-            value={email}
-            placeholder="email"
-            onChange={handleChange}
-          />
-          <br />
-          <input
-            type="password"
-            name="password"
-            value={password}
-            placeholder="password"
-            onChange={handleChange}
-          />
-          <br />
-          <button type="submit">Login</button>
-        </form>
-        <p>or</p>
-        <Link to="/register">
-          <button>Register</button>
-        </Link>
+    <div className='container_form'>
+      <div className="form-box">
+        <header>
+          <h1 className='title_login'>Login </h1>
+          <p className='mid_login'>Welcome to TageTape, Yah!!</p>
+        </header>
+        <div className="s" style={{ margin: '0 auto', textAlign: 'center' }}>
+          <form onSubmit={onSubmit}>
+            <input
+              type="email"
+              name="email"
+              value={email}
+              placeholder="Enter your email"
+              onChange={handleChange}
+            />
+            <br />
+            <input
+              type="password"
+              name="password"
+              value={password}
+              placeholder="Enter your password"
+              onChange={handleChange}
+            />
+            <br />
+            <button type="submit" className='login'>Login</button>
+            <p>or</p>
+            <Link to="/register">
+              <button className='regis'>Register</button>
+            </Link>
+          </form>
+        </div>
       </div>
     </div>
   );

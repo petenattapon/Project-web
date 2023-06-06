@@ -1,8 +1,10 @@
 ﻿import React, { useState } from 'react';
 import axios from 'axios';
-
+import '../../sass/LoginandRegis/Register.scss'
+import { Link } from 'react-router-dom';
 function Register() {
-  const [userName, setUserName] = useState("");
+  const [firstname, setFirstname] = useState("");
+  const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -10,10 +12,11 @@ function Register() {
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    if (userName && email && password && password === confirmPassword) {
+    if (firstname && lastname && email && password && password === confirmPassword) {
       try {
         const user = {
-          username: userName,
+          firstname: firstname,
+          lastname: lastname,
           email: email,
           password: password,
         };
@@ -29,53 +32,80 @@ function Register() {
     }
 
     console.log("Submit Success......");
-    console.log(userName);
+    console.log(firstname);
+    console.log(lastname);
     console.log(email);
     console.log(password);
     console.log(confirmPassword);
 
-    setUserName("");
+    setFirstname("");
+    setLastname("")
     setEmail("");
     setPassword("");
     setConfirmPassword("");
   };
 
   return (
-    <div>
-      <h1>Register</h1>
-      <form onSubmit={onSubmit}>
-        <div className="s" style={{ margin: '0 auto', textAlign: 'center' }}>
+
+
+    <div className='container_form'>
+      <div className="form-box">
+
+        <header>
+          <h1 className='title_login'>Register </h1>
+          <p className='mid_login'>Welcome to TageTape</p>
+        </header>
+        <form onSubmit={onSubmit}>
+
           <input
+          className='inputLog'
             type="text"
-            name="username"
-            placeholder="username"
-            value={userName}
-            onChange={(e) => setUserName(e.target.value)}
-          /><br />
+            name="firstname"
+            placeholder="Enter your first name"
+            value={firstname}
+            onChange={(e) => setFirstname(e.target.value)}
+          />
+           <input
+           className='inputLog'
+            type="text"
+            name="lastname"
+            placeholder="Enter your last name"
+            value={lastname}
+            onChange={(e) => setLastname(e.target.value)}
+          />
           <input
+          className='inputLog'
             type="email"
             name="email"
             placeholder="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-          /><br />
+          />
           <input
+          className='inputLog'
             type="password"
             name="password"
             placeholder="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-          /><br />
+          />
           <input
+          className='inputLog'
             type="password"
             name="confirmPassword"
             placeholder="confirm password"
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
-          /><br />
-          <button type="submit">Register</button>
-        </div>
-      </form>
+          />
+          <hr />
+          <button type="submit" className='regis'>Register</button>
+          <h4 style={{margin:"0",textAlign:"center"}}>or</h4>
+          <Link to='/login'>
+          <button type="submit" className='login'>Login</button>
+          </Link>
+          
+        </form>
+      </div>
     </div>
   );
 }

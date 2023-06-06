@@ -30,7 +30,7 @@ function Header({setLogin}) {
                         <Link id='Link' onClick={handleClickOpenModal}>
                             <FiUser className='Fi' />
                         </Link>
-                        <button onClick={() => setLogin({})}>Logout</button>
+                        <button onClick={() => setLogin()}>Logout</button>
                         <Modal
                             isOpen={modalOpen}
                             onRequestClose={handleClickCloseModal}

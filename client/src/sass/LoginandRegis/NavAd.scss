@@ -1,0 +1,17 @@
+﻿header#main-admin{
+    border-bottom: 2px solid #000;
+}
+.header-container-admin{
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .page-admin .lAd{
+        box-sizing: border-box;
+        margin: 10px 0;
+        padding: 0 20px;
+        text-decoration: none;
+        color: #000;
+        font-weight: bold;
+    }
+}

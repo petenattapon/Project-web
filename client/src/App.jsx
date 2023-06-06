@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { BrowserRouter, NavLink, Routes, Route } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Home from './components/Page/Home';
 import Gallery from './components/Page/Gallery';
@@ -14,22 +14,34 @@ import AdminPage from './components/Page/AdminPage';
 import EditPage from './components/Page/EditPage';
 import Register from './components/Login_Regis/Register';
 import Login from './components/Login_Regis/Login';
-
+import ShowData from './components/Admin_page/ShowData';
+import ShowUserData from './components/Admin_page/ShowUserData';
 function App() {
   const [user, setLogin] = useState(null);
+
+  useEffect(() => {
+    const storedUser = JSON.parse(localStorage.getItem('000'));
+    if (storedUser && storedUser._id) {
+      setLogin(storedUser);
+    }
+  }, []);
+
+  const handleLogin = (userData) => {
+    setLogin(userData);
+    localStorage.setItem('000', JSON.stringify(userData));
+  };
+
+  const handleLogout = () => {
+    setLogin(null);
+    localStorage.removeItem('000');
+  };
 
   return (
     <BrowserRouter>
       <Routes>
         <Route
           path="/"
-          element={
-            user && user._id ? (
-              <Home setLogin={setLogin} />
-            ) : (
-              <Login setLogin={setLogin} />
-            )
-          }
+          element={user && user._id ? <Home setLogin={handleLogout} /> : <Login setLogin={handleLogin} />}
         />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/event" element={<Event />} />
@@ -39,10 +51,12 @@ function App() {
         <Route path="/products/:id" element={<Product />} />
         <Route path="/requests" element={<Request />} />
         <Route path="/edit" element={<EditProfile />} />
-        <Route path="/admin" element={<AdminPage />} />
+        <Route path="/admin/productSchema" element={<AdminPage />} />
         <Route path="/editpage" element={<EditPage />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login setLogin={setLogin} />} />
+        <Route path='/userSchema' element={<ShowUserData />} />
+        <Route path="/login" element={<Login setLogin={handleLogin} />} />
+
       </Routes>
     </BrowserRouter>
   );

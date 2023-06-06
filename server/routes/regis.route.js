@@ -5,7 +5,8 @@ const RegisUser = require("../models/User_model");
 
 // Create a new user
 router.post('/register/user', async (req, res) => {
-  const { username, email, password } = req.body;
+        createdAt: new Date()
+  const { firstname, lastname, email, password, createdAt} = req.body;
 
   try {
     const existingUser = await RegisUser.findOne({ email });
@@ -14,9 +15,11 @@ router.post('/register/user', async (req, res) => {
       res.json({ message: "User already registered" });
     } else {
       const user = new RegisUser({
-        username,
+        firstname,
+        lastname,
         email,
-        password
+        password,
+        createdAt: new Date()
       });
 
       await user.save();
@@ -46,9 +49,23 @@ router.post('/login/user', async (req, res) => {
   }
 });
 
+router.get("/login/user", async (req, res, next) => {
+  try {
+    const users = await RegisUser.find(); // Retrieve all users
+    res.json(users);
+  } catch (error) {
+    next(error);
+  }
+});
 
-
-
-
+router.delete("/user/delete_user/:id", async (req, res, next) => {
+  try {
+    const users = req.params.id;
+    const user = await RegisUser.findByIdAndDelete(users);
+    res.json({ message: "Tape created successfully" });
+  } catch (error) {
+    next(error);
+  }
+});
 
 module.exports = router;

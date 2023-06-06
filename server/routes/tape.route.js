@@ -5,7 +5,7 @@ const TapeModel = require("../models/TapeRequest");
 
 // Create a product
 router.post("/requests/tapes", async (req, res, next) => {
-  const { productName, productDetail, sideA, sideB, opProduct } = req.body;
+  const { productName, productDetail, sideA, sideB, opProduct,createdAt } = req.body;
 
   const tape = new TapeModel({
     productName,
@@ -13,6 +13,7 @@ router.post("/requests/tapes", async (req, res, next) => {
     sideA,
     sideB,
     opProduct,
+    createdAt: new Date()
   });
 
   await tape.save();
