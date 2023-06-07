@@ -27,7 +27,9 @@ function Header({setLogin}) {
 
                     </div>
                     <div className="icon-container">
-                       
+                    <Link to='/profile' id='Link'>
+                            <FiUser className='Fi' />
+                        </Link>
                         <Link to='/gallery' id='Link'>
                             <FiSearch className='Fi' />
                         </Link>
