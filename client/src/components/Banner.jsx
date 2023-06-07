@@ -12,8 +12,8 @@ function Banner() {
         <section className="container">
             <div className="banner-container">
                 <div className="banner-text">
-                    <h1>{bannerData.title}</h1>
-                    <p>{bannerData.subtitle}</p>
+                    {/* <h1>{bannerData.title}</h1>
+                    <p>{bannerData.subtitle}</p> */}
                 </div>
             </div>
         </section>

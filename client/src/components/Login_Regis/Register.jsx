@@ -11,8 +11,8 @@ function Register() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-
-    if (firstname && lastname && email && password && password === confirmPassword) {
+  
+    if (firstname && lastname && email && password && (password === confirmPassword)) {
       try {
         const user = {
           firstname: firstname,
@@ -20,7 +20,7 @@ function Register() {
           email: email,
           password: password,
         };
-
+  
         await axios.post('http://localhost:4000/register/user', user);
         alert('สร้างผู้ใช้งานสำเร็จ');
       } catch (error) {
@@ -28,22 +28,20 @@ function Register() {
         console.log(error);
       }
     } else {
-      alert('กรุณากรอกข้อมูลให้ครบและตรวจสอบรหัสผ่านอีกครั้ง');
+      if (password !== confirmPassword) {
+        alert('รหัสผ่านไม่ตรงกัน กรุณาตรวจสอบอีกครั้ง');
+      } else {
+        alert('กรุณากรอกข้อมูลให้ครบและตรวจสอบรหัสผ่านอีกครั้ง');
+      }
     }
-
-    console.log("Submit Success......");
-    console.log(firstname);
-    console.log(lastname);
-    console.log(email);
-    console.log(password);
-    console.log(confirmPassword);
-
+  
     setFirstname("");
-    setLastname("")
+    setLastname("");
     setEmail("");
     setPassword("");
     setConfirmPassword("");
   };
+  
 
   return (
 
@@ -64,6 +62,7 @@ function Register() {
             placeholder="Enter your first name"
             value={firstname}
             onChange={(e) => setFirstname(e.target.value)}
+            required
           />
            <input
            className='inputLog'
@@ -72,6 +71,7 @@ function Register() {
             placeholder="Enter your last name"
             value={lastname}
             onChange={(e) => setLastname(e.target.value)}
+            required
           />
           <input
           className='inputLog'
@@ -80,6 +80,7 @@ function Register() {
             placeholder="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            required
           />
           <input
           className='inputLog'
@@ -88,6 +89,7 @@ function Register() {
             placeholder="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            required
           />
           <input
           className='inputLog'
@@ -96,6 +98,7 @@ function Register() {
             placeholder="confirm password"
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
+            required
           />
           <hr />
           <button type="submit" className='regis'>Register</button>

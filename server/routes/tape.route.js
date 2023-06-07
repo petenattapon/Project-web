@@ -19,7 +19,7 @@ let upload = multer({
 
 // Create a product
 router.post("/requests/tapes", upload, async (req, res, next) => {
-  const { productName, productDetail, sideA, sideB, opProduct, image } = req.body;
+  const { productName, productDetail, sideA, sideB, opProduct } = req.body;
 
   const tape = new TapeModel({
     productName,
@@ -27,19 +27,14 @@ router.post("/requests/tapes", upload, async (req, res, next) => {
     sideA,
     sideB,
     opProduct,
-    image: req.file.filename, // Use req.file.filename to store the image filename
-    createdAt: Date.now()
+    image: req.file ? req.file.filename : null,
+    createdAt: Date.now(),
+    statusProduct: false, // กำหนดค่าเริ่มต้นของ statusProduct เป็น false
   });
 
-  await tape.save();
-
-  res.json({ message: "Tape created successfully" });
-});
-
-router.get("/requests/tapes", async (req, res, next) => {
   try {
-    const tape = await TapeModel.find();
-    res.json(tape);
+    await tape.save();
+    res.json({ message: "Tape created successfully", tapeId: tape._id }); // เพิ่มการส่ง ID ของเทปที่ถูกสร้างขึ้น
   } catch (error) {
     next(error);
   }
@@ -77,7 +72,7 @@ router.delete("/requests/delete_tape/:id", async (req, res, next) => {
   }
 });
 
-router.put('/update/tapes/:id', async (req, res, next) => {
+router.put('/update/tapes/:id', upload, async (req, res, next) => {
   try {
     const tapeId = req.params.id;
     const updateData = {
@@ -86,7 +81,7 @@ router.put('/update/tapes/:id', async (req, res, next) => {
       sideA: req.body.sideA,
       sideB: req.body.sideB,
       opProduct: req.body.opProduct,
-      image: req.file.filename,
+      image: req.file ? req.file.filename : null,
     };
     const tape = await TapeModel.findByIdAndUpdate(tapeId, updateData);
     res.json({ message: 'Tape updated successfully' });
@@ -94,5 +89,22 @@ router.put('/update/tapes/:id', async (req, res, next) => {
     next(error);
   }
 });
+
+
+// ...
+
+router.get('/requests/get_approved_tapes', async (req, res, next) => {
+  try {
+    const approvedTapes = await TapeModel.find({ statusProduct: true });
+    res.json(approvedTapes);
+  } catch (error) {
+    next(error);
+  }
+});
+
+
+// ...
+
+
 
 module.exports = router;

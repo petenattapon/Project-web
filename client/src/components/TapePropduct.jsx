@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { AiFillPlayCircle } from 'react-icons/ai';
 import '../sass/Page2/TapeProduct.scss';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 function TapeProduct() {
   const [product, setProductTapes] = useState(null);
   const { id } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -25,6 +26,10 @@ function TapeProduct() {
     return <div>Loading...</div>;
   }
 
+  const goBack = () => {
+    navigate(-1);
+  };
+
   return (
     <main className="tape-product">
       <section className="container">
@@ -35,7 +40,7 @@ function TapeProduct() {
                 <h2>{product.productName}</h2>
               </div>
               <figure className="image-product">
-                <img src={`http://localhost:4000/uploads/${product.image}`} alt="Product"/>
+                <img src={`http://localhost:4000/uploads/${product.image}`} alt="Product" />
               </figure>
               <div className="play-music">
                 <AiFillPlayCircle /> <p>ฟังเพลงตัวอย่าง</p>
@@ -45,9 +50,13 @@ function TapeProduct() {
               <div className="details-music">
                 <h4>Music of album</h4>
                 <p>Side a</p>
-                <ul style={{ whiteSpace: 'pre-line' }}><li>{product.sideA}</li></ul>
+                <ul style={{ whiteSpace: 'pre-line' }}>
+                  <li>{product.sideA}</li>
+                </ul>
                 <p>Side B</p>
-                <ul style={{ whiteSpace: 'pre-line' }}><li>{product.sideB}</li></ul>
+                <ul style={{ whiteSpace: 'pre-line' }}>
+                  <li>{product.sideB}</li>
+                </ul>
                 <h4>Type: {product.opProduct}</h4>
               </div>
 
@@ -58,9 +67,9 @@ function TapeProduct() {
               </figure>
               <hr />
               <figure>
-                <Link to="/gallery">
-                  <button className='back'>Go back</button>
-                </Link>
+                <button className="back" onClick={goBack}>
+                  Go back
+                </button>
               </figure>
             </div>
           </article>

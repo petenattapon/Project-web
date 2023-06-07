@@ -8,6 +8,7 @@ function AllGallery() {
   const [productTapes, setProductTapes] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredTapes, setFilteredTapes] = useState([]);
+  const [approvedProducts, setApprovedProducts] = useState([]);
   const [sortingOption, setSortingOption] = useState('');
 
   useEffect(() => {
@@ -57,7 +58,16 @@ function AllGallery() {
   const handleSortingOption = (e) => {
     setSortingOption(e.target.value);
   };
-
+  const fetchApprovedProducts = async () => {
+    try {
+      const response = await axios.get(
+        'http://localhost:4000/requests/get_approved_tapes'
+      );
+      setApprovedProducts(response.data);
+    } catch (error) {
+      console.log('Error fetching approved products:', error);
+    }
+  };
   return (
     <main id="AllGallery">
       <section className="container">

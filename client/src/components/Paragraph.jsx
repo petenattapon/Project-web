@@ -1,18 +1,18 @@
-﻿import React from 'react'
-import '../sass/Page1/Paragraph.scss'
+﻿import React from 'react';
+import '../sass/Page1/Paragraph.scss';
 
-let Para = 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using'
+let Para = "Welcome to our website. It's a collection of galleries, cassette tape set. Whether it's new or old artists, in our gallery, we have them all. Anyone who is a disciple of cassette tapes, let's join together. Have fun with our gallery.";
 
 function Paragraph() {
   return (
     <main id='main'>
-        <article className='container'>
-            <div className="paragraph-container">
-                <p>{Para}</p>
-            </div>
-        </article>
+      <article className='container'>
+        <div className="paragraph-container">
+          <p>{Para}</p>
+        </div>
+      </article>
     </main>
-  )
+  );
 }
 
-export default Paragraph
+export default Paragraph;
