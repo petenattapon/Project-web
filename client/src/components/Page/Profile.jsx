@@ -10,19 +10,7 @@ function Profile() {
   const [userProfile, setUserProfile] = useState(null);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const storedUserProfile = JSON.parse(localStorage.getItem('userProfile'));
-    if (location.state?.userProfile) {
-      setUserProfile(location.state.userProfile);
-      localStorage.setItem('userProfile', JSON.stringify(location.state.userProfile));
-    } else if (storedUserProfile) {
-      setUserProfile(storedUserProfile);
-    } else {
-      // Redirect to Home if userProfile is not available
-      navigate('/');
-    }
-  }, [location.state, navigate]);
-
+ 
   return (
     <>
       <Header />
