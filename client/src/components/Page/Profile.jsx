@@ -28,15 +28,15 @@ function Profile() {
           </section>
           <hr style={{ width: '70%' }} />
           <section className='last-profile'>
-            {userProfile && (
+            
               <>
                 <article className="details-profile">
                   <h3>Name :</h3>
-                  <p>{userProfile.firstname} {userProfile.lastname}</p>
+                  <p></p>
                 </article>
                 <article className="details-profile">
                   <h3>Email :</h3>
-                  <p>{userProfile.email}</p>
+                  <p></p>
                 </article>
                 <div className="btn-edit">
                   <Link to="/edit">
@@ -45,7 +45,7 @@ function Profile() {
                   <button onClick={() => navigate('/')}>Home</button>
                 </div>
               </>
-            )}
+      
           </section>
         </section>
       </main>

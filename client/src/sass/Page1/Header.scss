@@ -20,11 +20,18 @@
     }
     .icon-container{
          .Fi{
-            padding: 0 .3em;
+            padding: 0 .5em;
             font-size: 20px;
         }
         #Link{
             color: #000;
+        }
+        button{
+            background-color: red;
+            border: 0;
+            color: #fff;
+            cursor: pointer;
+            padding: 5px 5px;
         }
     }
 }

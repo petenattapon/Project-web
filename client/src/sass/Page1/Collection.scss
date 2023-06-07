@@ -1,0 +1,42 @@
+﻿.collect-detail{
+    margin-top: 2rem;
+    width: 100%;
+    .searchbar{
+        width: 50%;
+        margin: 0 auto;
+        h3{text-align: center;}
+        input{
+            width: 100%;
+            box-sizing: border-box;
+            padding: .3rem 0;
+            outline: none;
+            font-size: 1rem;
+            border: 3px solid #000;
+        }
+    }
+
+    .btnBar{
+        width: 50%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        margin-top: 1rem;
+        button{
+            padding: .3rem 2rem;
+            background-color: #fff;
+            border: 3px solid #000;
+            cursor: pointer;
+        }
+    }
+
+    .showData-collect{
+        margin-top: 2rem;
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat(4,1fr);
+        grid-gap: 15px;
+        img{
+            width: 100%;
+        }
+    }
+}

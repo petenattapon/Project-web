@@ -1,5 +1,5 @@
 .manage-center {
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
     .product-container {
         width: 80%;
@@ -14,9 +14,10 @@
         .image-product {
             display: flex;
             justify-content: center;
-
+            width: 100%;
             img {
-                height: 75vh;
+                box-sizing: border-box;
+               width: 35vw;
             }
         }
 
@@ -36,9 +37,11 @@
                 background-color: #fff;
                 cursor: pointer;
                 transition: all 1s ease;
+                margin: 0 10px;
                 #Link{
                     text-decoration: none;
                     color: #000;
+                   
                 }
             }
 

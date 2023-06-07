@@ -28,7 +28,7 @@ function Login({ setLogin }) {
       }
     } catch (error) {
       console.log(error);
-      alert('Invalid email or password');
+      alert('Please check the correctness of your email and password. Or register.');
     }
 
     setEmail('');

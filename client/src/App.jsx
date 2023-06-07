@@ -3,12 +3,13 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Home from './components/Page/Home';
 import Gallery from './components/Page/Gallery';
-import Event from './components/Page/Event';
+import Event from './components/Page/Collect';
 import About from './components/Page/About';
 import Contact from './components/Page/Contact';
 import Profile from './components/Page/Profile';
 import Product from './components/Page/Product';
 import Request from './components/Page/Request';
+import Collect from './components/Page/Collect';
 import EditProfile from './components/Page/EditProfile';
 import AdminPage from './components/Page/AdminPage';
 import EditPage from './components/Page/EditPage';
@@ -41,12 +42,9 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route
-          path="/"
-          element={user && user._id ? <Home setLogin={handleLogout} /> : <Login setLogin={handleLogin} />}
-        />
+        <Route path="/" element={user && user._id ? <Home setLogin={handleLogout} /> : <Login setLogin={handleLogin} />} />
         <Route path="/gallery" element={<Gallery />} />
-        <Route path="/event" element={<Event />} />
+        <Route path="/collect" element={<Collect />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/profile" element={<Profile />} />
@@ -55,10 +53,9 @@ function App() {
         <Route path="/edit" element={<EditProfile />} />
         <Route path="/admin/productSchema" element={<AdminPage />} />
         <Route path="/register" element={<Register />} />
-        <Route path='/userSchema' element={<ShowUserData />} />
-        <Route path='/addItems' element={<AddItems />} />
+        <Route path="/userSchema" element={<ShowUserData />} />
+        <Route path="/addItems" element={<AddItems />} />
         <Route path="/login" element={<Login setLogin={handleLogin} />} />
-
       </Routes>
     </BrowserRouter>
   );

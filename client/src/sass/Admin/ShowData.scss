@@ -46,107 +46,9 @@
     border-bottom: 1px solid #bebebe;
 
     .edit-input {
-      padding: 12px 15px; /* Match the padding of th and td */
-      width: 100%; /* Ensure the input fills the cell */
-      box-sizing: border-box; /* Include padding in width calculation */
-    }
-  }
-
-  th {
-    border-top: 2px solid #000;
-  }
-
-  tbody tr:nth-of-type(even) {
-    background-color: #e7e7e7;
-  }
-
-  tbody tr:last-of-type {
-    border-bottom: 3px solid #000;
-  }
-
-  .delete {
-    background-color: #ff2626;
-    border: 0;
-    color: #fff;
-    cursor: pointer;
-    padding: 5px 8px;
-  }
-
-  .approved {
-    background-color: #048f10;
-    border: 0;
-    color: #fff;
-    cursor: pointer;
-    padding: 5px 8px;
-  }
-
-  .edit {
-    background-color: #0d048f;
-    border: 0;
-    color: #fff;
-    cursor: pointer;
-    padding: 5px 8px;
-  }
-}
-
-@media screen and (max-width: 700px) {
-  .content-table {
-    width: 100%;
-    display: block;
-    overflow-x: auto;
-  }
-}
-.search-box {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-
-  .search-input {
-    box-sizing: border-box;
-    margin: 1rem 3rem;
-
-    input,
-    select {
-      width: 100%;
+      padding: 12px 15px;
+      width: calc(100% - 30px); /* Subtract the padding from the width */
       box-sizing: border-box;
-      padding: 0.3em 1rem;
-      outline: none;
-      font-size: 15px;
-      margin: 8px 0;
-    }
-  }
-}
-
-.container-fetch {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-.content-table {
-  border-collapse: collapse;
-  margin: 0 3rem;
-  font-size: 0.9em;
-  overflow: hidden;
-  width: 100%;
-  margin-bottom: 2rem;
-
-  thead tr {
-    background-color: #000;
-    color: #fff;
-    text-align: left;
-  }
-
-  th,
-  td {
-    padding: 12px 15px;
-    border-bottom: 1px solid #bebebe;
-
-    .edit-input {
-      padding: 12px 15px; /* Match the padding of th and td */
-      width: 100%; /* Ensure the input fills the cell */
-      box-sizing: border-box; /* Include padding in width calculation */
     }
   }
 
@@ -163,7 +65,7 @@
   }
 
   .delete {
-    background-color: #ff2626;
+    background-color: #dc3545;
     border: 0;
     color: #fff;
     cursor: pointer;
@@ -171,19 +73,31 @@
   }
 
   .approved {
-    background-color: #048f10; // Default background color
+    background-color: #ffc107; /* Default background color */
     border: 0;
     color: #fff;
     cursor: pointer;
     padding: 5px 8px;
-
+  
     &.is-approved {
-      background-color: blue; // Blue background color when status is true
+      background-color: #198754; /* Blue background color when status is true */
     }
+  }
+  .save, .cancel {
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    margin: 5px 0;
+  }
+  .save {
+    background-color: #198754;
+  }
+  .cancel {
+    background-color: #dc3545;
   }
 
   .edit {
-    background-color: #0d048f;
+    background-color: #0d6efd;
     border: 0;
     color: #fff;
     cursor: pointer;

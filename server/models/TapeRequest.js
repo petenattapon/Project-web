@@ -9,6 +9,7 @@ const productSchema = new mongoose.Schema({
   opProduct: { type: String },
   allProduct: { type: String,default: "All" },
   statusProduct: { type: Boolean, default: false },
+  addCollection: { type: Boolean, default: false },
   createdAt: { type: Date, default: Date.now } // Remove the parentheses after Date.now
 }, {
   collection: "TapesCass"

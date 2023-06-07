@@ -10,6 +10,8 @@ function AllGallery() {
   const [filteredTapes, setFilteredTapes] = useState([]);
   const [approvedProducts, setApprovedProducts] = useState([]);
   const [sortingOption, setSortingOption] = useState('');
+  const [displayCount, setDisplayCount] = useState(4);
+  const [loopIndex, setLoopIndex] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -68,6 +70,18 @@ function AllGallery() {
     }
   };
 
+  const handleLoadMore = () => {
+    const nextIndex = loopIndex + 1;
+    const start = nextIndex * 4;
+    const end = start + 4;
+    setDisplayCount(end);
+    setLoopIndex(nextIndex);
+  };
+
+  useEffect(() => {
+    fetchApprovedProducts();
+  }, []);
+
   return (
     <main id="AllGallery">
       <section className="container">
@@ -112,7 +126,7 @@ function AllGallery() {
           <h2>All gallery</h2>
         </div>
         <section className="gallery-container">
-          {filteredTapes.map((product) =>
+          {filteredTapes.slice(0, displayCount).map((product) =>
             product.statusProduct ? (
               <article className="gallery-details" key={product._id}>
                 <Link to={`/products/${product._id}`}>
@@ -134,6 +148,12 @@ function AllGallery() {
             ) : null
           )}
         </section>
+        {filteredTapes.length > displayCount && (
+          <div className="btnn">
+            <button onClick={handleLoadMore} className='loadMore'>Load More</button>
+            
+          </div>
+        )}
       </section>
     </main>
   );

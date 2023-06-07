@@ -61,6 +61,9 @@ function TapeProduct() {
               </div>
 
               <figure>
+              <Link to={`/collect?productName=${product.productName}&productDetail=${product.productDetail}&sideA=${product.sideA}&sideB=${product.sideB}&opProduct=${product.opProduct}&image=${product.image}`}>
+                  <button>Add to Collection</button>
+                </Link>
                 <Link to="/requests" id="Link">
                   <button>Request to admin</button>
                 </Link>

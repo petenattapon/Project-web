@@ -30,6 +30,7 @@ router.post("/requests/tapes", upload, async (req, res, next) => {
     image: req.file ? req.file.filename : null,
     createdAt: Date.now(),
     statusProduct: false, // กำหนดค่าเริ่มต้นของ statusProduct เป็น false
+    addCollection: false
   });
 
   try {
