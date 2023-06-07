@@ -171,11 +171,15 @@
   }
 
   .approved {
-    background-color: #048f10;
+    background-color: #048f10; // Default background color
     border: 0;
     color: #fff;
     cursor: pointer;
     padding: 5px 8px;
+
+    &.is-approved {
+      background-color: blue; // Blue background color when status is true
+    }
   }
 
   .edit {

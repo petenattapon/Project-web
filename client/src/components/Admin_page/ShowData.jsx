@@ -43,6 +43,19 @@ function ShowData() {
     }
   };
 
+  const handleStatusUpdate = async (product) => {
+    try {
+      const updatedData = { statusProduct: !product.statusProduct };
+      await axios.put(`http://localhost:4000/update/tapes/${product._id}/status`, updatedData);
+      setProductTapes((prevProductTapes) =>
+        prevProductTapes.map((item) => (item._id === product._id ? { ...item, ...updatedData } : item))
+      );
+    } catch (error) {
+      console.log('Error updating status:', error);
+    }
+  };
+
+
   const handleDelete = async (id) => {
     const alertCon = window.confirm('Are you sure you want to delete it?');
 
@@ -144,6 +157,7 @@ function ShowData() {
               <th>Approved</th>
               <th>Edit</th>
               <th>Delete</th>
+              <th>Delete</th>
             </tr>
           </thead>
           <tbody>
@@ -209,7 +223,9 @@ function ShowData() {
                 </td>
                 <td>{moment(product.createdAt).format('YYYY-MM-DD HH:mm:ss.SSS')}</td>
                 <td>
-                  <button className="approved">Approved</button>
+                  <button className="approved " onClick={() => handleStatusUpdate(product)}>
+                    Approved
+                  </button>
                 </td>
                 <td>
                   {editingProductId === product._id ? (
@@ -232,6 +248,7 @@ function ShowData() {
                     Delete
                   </button>
                 </td>
+                <td>{product.allProduct}</td>
               </tr>
             ))}
           </tbody>

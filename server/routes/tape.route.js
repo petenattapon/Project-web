@@ -72,7 +72,7 @@ router.delete("/requests/delete_tape/:id", async (req, res, next) => {
   }
 });
 
-router.put('/update/tapes/:id', upload, async (req, res, next) => {
+router.put('/update/tapes/:id', async (req, res, next) => {
   try {
     const tapeId = req.params.id;
     const updateData = {
@@ -81,8 +81,8 @@ router.put('/update/tapes/:id', upload, async (req, res, next) => {
       sideA: req.body.sideA,
       sideB: req.body.sideB,
       opProduct: req.body.opProduct,
-      image: req.file ? req.file.filename : null,
     };
+
     const tape = await TapeModel.findByIdAndUpdate(tapeId, updateData);
     res.json({ message: 'Tape updated successfully' });
   } catch (error) {
@@ -90,20 +90,18 @@ router.put('/update/tapes/:id', upload, async (req, res, next) => {
   }
 });
 
-
-// ...
-
-router.get('/requests/get_approved_tapes', async (req, res, next) => {
+router.put('/update/tapes/:id/status', async (req, res, next) => {
   try {
-    const approvedTapes = await TapeModel.find({ statusProduct: true });
-    res.json(approvedTapes);
+    const tapeId = req.params.id;
+    const { statusProduct } = req.body;
+    const tape = await TapeModel.findByIdAndUpdate(tapeId, { statusProduct });
+    res.json({ message: 'Status updated successfully' });
   } catch (error) {
     next(error);
   }
 });
 
 
-// ...
 
 
 

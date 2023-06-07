@@ -58,16 +58,16 @@ function AllGallery() {
   const handleSortingOption = (e) => {
     setSortingOption(e.target.value);
   };
+
   const fetchApprovedProducts = async () => {
     try {
-      const response = await axios.get(
-        'http://localhost:4000/requests/get_approved_tapes'
-      );
+      const response = await axios.get('http://localhost:4000/requests/get_approved_tapes');
       setApprovedProducts(response.data);
     } catch (error) {
       console.log('Error fetching approved products:', error);
     }
   };
+
   return (
     <main id="AllGallery">
       <section className="container">
@@ -112,22 +112,27 @@ function AllGallery() {
           <h2>All gallery</h2>
         </div>
         <section className="gallery-container">
-          {filteredTapes.map((product) => (
-            <article className="gallery-details" key={product._id}>
-              <Link to={`/products/${product._id}`}>
-                <figure className="img-gallery">
-                  <a href={`/products/${product._id}`}>
-                    <img src={`http://localhost:4000/uploads/${product.image}`} alt="Product" />
-                  </a>
-                </figure>
-              </Link>
-              <p>
-                <Link to={`/products/${product._id}`} className="allName">
-                  {product.productName}
+          {filteredTapes.map((product) =>
+            product.statusProduct ? (
+              <article className="gallery-details" key={product._id}>
+                <Link to={`/products/${product._id}`}>
+                  <figure className="img-gallery">
+                    <a href={`/products/${product._id}`}>
+                      <img
+                        src={`http://localhost:4000/uploads/${product.image}`}
+                        alt="Product"
+                      />
+                    </a>
+                  </figure>
                 </Link>
-              </p>
-            </article>
-          ))}
+                <p>
+                  <Link to={`/products/${product._id}`} className="allName">
+                    {product.productName}
+                  </Link>
+                </p>
+              </article>
+            ) : null
+          )}
         </section>
       </section>
     </main>

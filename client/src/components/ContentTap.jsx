@@ -28,7 +28,9 @@ function ContentTap() {
                 <h1>Popular cassette tapes</h1>
                 <hr style={{ width: "30%" }} />
                 <section className="content-container">
-                    {filteredPopular.map(product => (
+                    {filteredPopular.map((product) =>
+                        product.statusProduct ?(
+
                         <article className='content-details' key={product._id}>
                             <figure className='img-content'>
                                 <a href={`/products/${product._id}`}>
@@ -41,7 +43,9 @@ function ContentTap() {
                                 </Link>
                             </p>
                         </article>
-                    ))}
+                        ):null
+                    )}
+                    
 
                 </section>
             </section>
