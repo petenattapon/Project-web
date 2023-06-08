@@ -1,20 +1,18 @@
 .manage-center {
     width: 100%;
+    padding-top: 2rem;
     margin: 0 auto;
     .product-container {
-        width: 80%;
+        width: 60%;
         margin: 0 auto;
         display: flex;
         flex-direction: column;
-
-        .manage-padding {
-            padding: 2rem 8rem;
-        }
 
         .image-product {
             display: flex;
             justify-content: center;
             width: 100%;
+            box-sizing: border-box;
             img {
                 box-sizing: border-box;
                width: 35vw;
@@ -55,5 +53,13 @@
                 color: #fff;
             }
         }
+    }
+}
+@media screen and (max-width:800px){
+    .product-container{
+        width: 100%;
+    }
+    .textname-product{
+        font-size: 2vh;
     }
 }

@@ -5,6 +5,7 @@ import axios from 'axios';
 function ShowUserData() {
   const [userData, setUserData] = useState([]);
   const [sortingOption, setSortingOption] = useState('');
+  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
     const fetchData = async () => {
@@ -59,12 +60,21 @@ function ShowUserData() {
     setSortingOption(event.target.value);
   };
 
+  const handleSearch = (event) => {
+    setSearchQuery(event.target.value);
+  };
+
+  const filteredData = userData.filter((user) => {
+    const fullName = `${user.firstname} ${user.lastname}`;
+    return fullName.toLowerCase().includes(searchQuery.toLowerCase());
+  });
+
   return (
     <div className="main">
       <NavbarAdmin />
       <div className="search-box">
         <div className="search-input">
-          <input type="text" placeholder="Search" />
+          <input type="text" placeholder="Search" value={searchQuery} onChange={handleSearch} />
         </div>
         <div className="search-input">
           <select value={sortingOption} onChange={handleSortingChange}>
@@ -78,7 +88,6 @@ function ShowUserData() {
         <table className="content-table">
           <thead>
             <tr>
-              <th>Images</th>
               <th>Name</th>
               <th>Email</th>
               <th>Status</th>
@@ -86,9 +95,8 @@ function ShowUserData() {
             </tr>
           </thead>
           <tbody>
-            {userData.map((user) => (
+            {filteredData.map((user) => (
               <tr key={user._id}>
-                <td>{/* Render user image here */}</td>
                 <td>{user.firstname} {user.lastname}</td>
                 <td>{user.email}</td>
                 <td>{user.status}</td>

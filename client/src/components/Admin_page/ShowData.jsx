@@ -160,7 +160,6 @@ function ShowData() {
               <th>Approved</th>
               <th>Edit</th>
               <th>Delete</th>
-              <th>Delete</th>
             </tr>
           </thead>
           <tbody>
@@ -252,7 +251,6 @@ function ShowData() {
                     Delete
                   </button>
                 </td>
-                <td>{product.allProduct}</td>
               </tr>
             ))}
           </tbody>

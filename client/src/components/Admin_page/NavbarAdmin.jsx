@@ -53,7 +53,7 @@ function NavbarAdmin() {
             </Link>
           </div>
           <div className="logout-admin">
-            <button onClick={handleLogout}>Logout</button>
+            <button onClick={handleLogout} style={{}}>Logout</button>
           </div>
         </div>
       </div>

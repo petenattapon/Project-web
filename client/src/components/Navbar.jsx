@@ -12,8 +12,8 @@ function Navbar() {
                   <Link to="/" id='Link'><li>Home</li></Link>
                   <Link to="/gallery" id='Link'><li>Gallery</li></Link> 
                   <Link to="/collect" id='Link'><li>Collection</li></Link>
-                  <Link to="/about" id='Link'><li>About</li></Link>
-                  <Link to="/contact" id='Link'><li>Contact</li></Link>
+                  {/* <Link to="/about" id='Link'><li>About</li></Link>
+                  <Link to="/contact" id='Link'><li>Contact</li></Link> */}
                 </ul>
             </div>
         </header>

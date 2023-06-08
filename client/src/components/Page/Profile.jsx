@@ -42,7 +42,7 @@ function Profile() {
                   <Link to="/edit">
                     <button>Edit Profile</button>
                   </Link>
-                  <button onClick={() => navigate('/')}>Home</button>
+                  {/* <button onClick={() => navigate('/')}>Home</button> */}
                 </div>
               </>
       

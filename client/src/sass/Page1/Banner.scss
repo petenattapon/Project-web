@@ -1,29 +1,29 @@
 ﻿#nav-bg {
-    height: 40vh;
-    background-position: center;
-    background-size: cover;
-    margin: 2vh 2vw 0 2vw;
-    cursor: pointer;
-  }
-  
-  .banner-container {
-    display: flex;
-    height: 40vh;
-    align-items: center;
-    justify-content: center;
-  
-    .banner-text {
-      color: #fff;
-      text-align: center;
-  
-      h1 {
-        box-sizing: border-box;
-        font-size: 2rem;
-      }
-  
-      p {
-        font-size: 1.5rem;
-      }
+  height: 40vh;
+  background-position: center;
+  background-size: cover;
+  margin: 2vh 2vw 0 2vw;
+  cursor: pointer;
+}
+
+.banner-container {
+  display: flex;
+  height: 40vh;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.5s ease; /* Added transition property for smoother slide transition */
+
+  .banner-text {
+    color: #fff;
+    text-align: center;
+
+    h1 {
+      box-sizing: border-box;
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1.5rem;
     }
   }
-  
+}
